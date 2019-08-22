@@ -1,4 +1,4 @@
-let Review = require('./index.js');
+const Review = require('./index.js');
 
 const ratings = [1, 2, 3, 4, 5];
 
@@ -35,8 +35,6 @@ const athleticTypes = ['YOGI', 'RUNNER', 'DANCER', 'CYCLIST', 'SWEATY GENERALIST
 const ageRanges = ['UNDER 18', '18-24', '25-34', '35-44', '45-54', '55-65', 'OVER 65', 'I KEEP MY AGE ON THE D.L.'];
 
 const bodyTypes = ['ATHLETIC', 'CURVY', 'LEAN', 'MUSCULAR', 'PETITE', 'SLIM', 'SOLID'];
-
-const reviewDate = randomDate(new Date(2014, 0, 1), new Date());
 
 const wasThisReviewHelpful = range(0, 20);
 
@@ -148,19 +146,23 @@ const createTops = () => {
   return topReview;
 };
 
-const createReviews = (productCategory) => {
+const createReviews = () => {
   let reviewsArr = [];
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 10; i++) {
     reviewsArr.push(createTops());
   }
-  for (let j = 0; j < 500; j++) {
+  for (let j = 0; j < 10; j++) {
     reviewsArr.push(createBottoms());
   }
   return reviewsArr;
 }
 
+const insertMockData = () => {
+  let reviews = createReviews();
+  for (let i = 0; i < reviews.length; i++) {
+    let { rating, username, activeSinceDate, helpfulnessVotesThumbsUp, helpfulnessVotesThumbsDown, featured, location, athleticType, ageRange, bodyType, whatYouLike, whatYouDidntLike, reviewDate, revewTitle, reviewBody, wasThisReviewHelpfulYes, wasThisReviewHelpfulNo } = reviews[i];
+    Review.insertMany({ rating, username, activeSinceDate, helpfulnessVotesThumbsUp, helpfulnessVotesThumbsDown, featured, location, athleticType, ageRange, bodyType, whatYouLike, whatYouDidntLike, reviewDate, revewTitle, reviewBody, wasThisReviewHelpfulYes, wasThisReviewHelpfulNo });
+  }
+}
 
-
-// const insertMockData = () => {
-
-// }
+insertMockData();

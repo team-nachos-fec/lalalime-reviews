@@ -27,12 +27,6 @@ let reviewSchema = new mongoose.Schema({
   wasThisReviewHelpfulNo: Number
 });
 
-let Review = mongoose.model('Reivew', reviewSchema);
+const Review = mongoose.model('Reivew', reviewSchema);
 
-// let save = (data) => {
-//   console.log('data',data);
-//   return Review.create(data)
-// }
-
-
-// module.exports.save = save;
+module.exports = Review;
