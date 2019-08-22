@@ -3,8 +3,8 @@ const getAllReviews = require('../database/dbhelpers.js');
 const controller = {
   get: (req, res) => {
     getAllReviews()
-      .then(reviews => res.send(200).status(reviews))
-      .catch(err => console.error(err));
+      .then(reviews => res.status(200).send(reviews))
+      .catch(err => res.status(400).send(err));
   }
 };
 
