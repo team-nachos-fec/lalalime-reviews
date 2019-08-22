@@ -10,9 +10,7 @@ db.once('open', function() {
 let reviewSchema = new mongoose.Schema({
   rating: Number,
   username: String,
-  activeSinceMonth: String,
-  activeSinceDay: String,
-  activeSinceYear: String,
+  activeSinceDate: String,
   helpfulnessVotesThumbsUp: Number,
   helpfulnessVotesThumbsDown: Number,
   featured: Boolean,
@@ -31,10 +29,10 @@ let reviewSchema = new mongoose.Schema({
 
 let Review = mongoose.model('Reivew', reviewSchema);
 
-let save = (data) => {
-  console.log('data',data);
-  return Review.create(data)
-}
+// let save = (data) => {
+//   console.log('data',data);
+//   return Review.create(data)
+// }
 
 
-module.exports.save = save;
+// module.exports.save = save;
