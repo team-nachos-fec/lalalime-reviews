@@ -5,7 +5,9 @@ const {
   getReviewsByAgeRange,
   getReviewsByBodyType,
   sortReviewsByFeatured,
-  sortReviewsByDate
+  sortReviewsByDate,
+  sortReviewsByRatingDescending,
+  sortReviewsByRatingAscending
 } = require('../database/dbhelpers.js');
 
 const controller = {
@@ -46,15 +48,29 @@ const controller = {
   sortByFeatured: (req, res) => {
     let { featured } = req.params;
     sortReviewsByFeatured({ featured })
-    .then(reviews => res.status(200).send(reviews))
-    .catch(err => res.status(400).send(err));
+      .then(reviews => res.status(200).send(reviews))
+      .catch(err => res.status(400).send(err));
   },
 
   sortByDate: (req, res) => {
     let { reviewDate } = req.params;
     sortReviewsByDate({ reviewDate })
-    .then(reviews => res.status(200).send(reviews))
-    .catch(err => res.status(400).send(err));
+      .then(reviews => res.status(200).send(reviews))
+      .catch(err => res.status(400).send(err));
+  },
+
+  sortByRatingDescending: (req, res) => {
+    let { rating } = req.params;
+    sortReviewsByRatingDescending({ rating })
+      .then(reviews => res.status(200).send(reviews))
+      .catch(err => res.status(400).send(err));
+  },
+
+  sortByRatingAscending: (req, res) => {
+    let { rating } = req.params;
+    sortReviewsByRatingAscending({ rating })
+      .then(reviews => res.status(200).send(reviews))
+      .catch(err => res.status(400).send(err));
   }
 
 };

@@ -25,19 +25,24 @@ const getReviewsByBodyType = (bodyType) => {
 } 
 
 // sort by featured true first
-const sortReviewsByFeatured = (featured) => {
+const sortReviewsByFeatured = () => {
   return Review.find({}).sort({ featured: -1 });
 }
 
 // sort by date newest first
-const sortReviewsByDate = (reviewDate) => {
+const sortReviewsByDate = () => {
   return Review.find({}).sort({ sortableReviewDate: -1 });
 }
 
 // sort by rating descending
-
+const sortReviewsByRatingDescending = () => {
+  return Review.find({}).sort({ rating: -1 });
+}
 
 // sort by rating ascending
+const sortReviewsByRatingAscending = () => {
+  return Review.find({}).sort({ rating: 1 });
+}
 
 module.exports = { 
   getAllReviews, 
@@ -46,5 +51,7 @@ module.exports = {
   getReviewsByAgeRange,
   getReviewsByBodyType,
   sortReviewsByFeatured,
-  sortReviewsByDate
+  sortReviewsByDate,
+  sortReviewsByRatingDescending,
+  sortReviewsByRatingAscending
 };

@@ -27,9 +27,16 @@ router
   .route('/sort-by-featured')
   .get(controller.sortByFeatured);
 
-  router
+router
   .route('/sort-by-date')
   .get(controller.sortByDate);
 
+router
+  .route('/sort-by-rating-descending')
+  .get(controller.sortByRatingDescending);
+
+router
+  .route('/sort-by-rating-ascending')
+  .get(controller.sortByRatingAscending);
 
 module.exports = router;
