@@ -1,11 +1,19 @@
-const getAllReviews = require('../database/dbhelpers.js');
+const { getAllReviews, getReviewsByRating } = require('../database/dbhelpers.js');
 
 const controller = {
   get: (req, res) => {
     getAllReviews()
       .then(reviews => res.status(200).send(reviews))
       .catch(err => res.status(400).send(err));
+  },
+
+  filterByRating: (req, res) => {
+    let { rating } = req.params;
+    getReviewsByRating({ rating })
+      .then(reviews => res.status(200).send(reviews))
+      .catch(err => res.status(400).send(err));
   }
+
 };
 
 module.exports = controller;

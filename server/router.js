@@ -4,8 +4,12 @@ const express = require('express');
 const router = express.Router();
 
 router
-  .route('/api')
-  .get(controller.get);
+  .route('/')
+    .get(controller.get);
+
+router
+  .route('/:rating')
+    .get(controller.filterByRating);
 
 
 module.exports = router;
