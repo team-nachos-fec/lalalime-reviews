@@ -48,7 +48,7 @@ const bottomsNouns = ['ankles', 'hips', 'knees', 'legs'];
 
 const topsNouns = ['shoulders', 'sleeves', 'torso', 'chest'];
 
-const negativeVerbs = ['hate', 'don\'t like', 'dislike'];
+const negativeVerbs = ['hate', 'do not like', 'dislike'];
 
 const positiveVerbs = ['love', 'like', 'enjoy'];
 
@@ -88,14 +88,16 @@ const createBottoms = () => {
   }
 
   if (bottomReview.rating < 3) {
-    bottomReview.reviewBody = `I ${negativeVerbs[Math.floor(Math.random() * Math.floor(negativeVerbs.length))]} how ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} are in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}. I feel they're ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} and ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]}. I ${negativeVerbs[Math.floor(Math.random() * Math.floor(negativeVerbs.length))]} them, especially because they are ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]}.`
+    bottomReview.reviewBody = `I ${negativeVerbs[Math.floor(Math.random() * Math.floor(negativeVerbs.length))]} how ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} they are in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}. I feel they are ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} and ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]}. I ${negativeVerbs[Math.floor(Math.random() * Math.floor(negativeVerbs.length))]} them, especially because they are ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]}.`
   } else {
-    bottomReview.reviewBody = `I ${positiveVerbs[Math.floor(Math.random() * Math.floor(positiveVerbs.length))]} how ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} are in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}. I feel they're ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} and ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]}. I ${positiveVerbs[Math.floor(Math.random() * Math.floor(positiveVerbs.length))]} them, especially because they are ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]}.`
+    bottomReview.reviewBody = `I ${positiveVerbs[Math.floor(Math.random() * Math.floor(positiveVerbs.length))]} how ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} they are in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}. I feel they are ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} and ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]}. I ${positiveVerbs[Math.floor(Math.random() * Math.floor(positiveVerbs.length))]} them, especially because they are ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]}.`
   }
 
   bottomReview.wasThisReviewHelpfulYes = wasThisReviewHelpful[Math.floor(Math.random() * Math.floor(wasThisReviewHelpful.length))];
 
   bottomReview.wasThisReviewHelpfulNo = wasThisReviewHelpful[Math.floor(Math.random() * Math.floor(wasThisReviewHelpful.length))];
+
+  return bottomReview
 };
 
 const createTops = () => {
@@ -134,24 +136,26 @@ const createTops = () => {
   }
 
   if (topReview.rating < 3) {
-    topReview.reviewBody = `I ${negativeVerbs[Math.floor(Math.random() * Math.floor(negativeVerbs.length))]} how ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} are in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}. I feel they're ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} and ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]}. I ${negativeVerbs[Math.floor(Math.random() * Math.floor(negativeVerbs.length))]} them, especially because they are ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]}.`
+    topReview.reviewBody = `I ${negativeVerbs[Math.floor(Math.random() * Math.floor(negativeVerbs.length))]} how ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} they are in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}. I feel they are ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} and ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]}. I ${negativeVerbs[Math.floor(Math.random() * Math.floor(negativeVerbs.length))]} them, especially because they are ${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]}.`
   } else {
-    topReview.reviewBody = `I ${positiveVerbs[Math.floor(Math.random() * Math.floor(positiveVerbs.length))]} how ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} are in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}. I feel they're ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} and ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]}. I ${positiveVerbs[Math.floor(Math.random() * Math.floor(positiveVerbs.length))]} them, especially because they are ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]}.`
+    topReview.reviewBody = `I ${positiveVerbs[Math.floor(Math.random() * Math.floor(positiveVerbs.length))]} how ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} they are in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}. I feel they are ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} and ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]}. I ${positiveVerbs[Math.floor(Math.random() * Math.floor(positiveVerbs.length))]} them, especially because they are ${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]}.`
   }
 
   topReview.wasThisReviewHelpfulYes = wasThisReviewHelpful[Math.floor(Math.random() * Math.floor(wasThisReviewHelpful.length))];
 
   topReview.wasThisReviewHelpfulNo = wasThisReviewHelpful[Math.floor(Math.random() * Math.floor(wasThisReviewHelpful.length))];
+
+  return topReview;
 };
 
-const createReviews = (product) => {
+const createReviews = (productCategory) => {
   let reviewsArr = [];
-  if (product === 'tops') {
+  if (productCategory === 'tops') {
     for (let i = 0; i < 10; i++) {
       reviewsArr.push(createTops());
     }
   }
-  if (product === 'bottoms') {
+  if (productCategory === 'bottoms') {
     for (let i = 0; i < 10; i++) {
       reviewsArr.push(createBottoms());
     }
