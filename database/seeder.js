@@ -150,15 +150,11 @@ const createTops = () => {
 
 const createReviews = (productCategory) => {
   let reviewsArr = [];
-  if (productCategory === 'tops') {
-    for (let i = 0; i < 10; i++) {
-      reviewsArr.push(createTops());
-    }
+  for (let i = 0; i < 500; i++) {
+    reviewsArr.push(createTops());
   }
-  if (productCategory === 'bottoms') {
-    for (let i = 0; i < 10; i++) {
-      reviewsArr.push(createBottoms());
-    }
+  for (let j = 0; j < 500; j++) {
+    reviewsArr.push(createBottoms());
   }
   return reviewsArr;
 }
