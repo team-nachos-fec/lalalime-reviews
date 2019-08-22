@@ -38,9 +38,9 @@ const bodyTypes = ['ATHLETIC', 'CURVY', 'LEAN', 'MUSCULAR', 'PETITE', 'SLIM', 'S
 
 const wasThisReviewHelpful = range(0, 20);
 
-const negativeAdjectives = ['tight', 'loose', 'itchy', 'small', 'tiny', 'huge', 'big', 'wide', 'narrow', 'smelly', 'pleasant', 'long', 'short', 'worst', 'too thick', 'too thin', 'too heavy', 'too light', 'ugly', 'gross'];
+const negativeAdjectives = ['tight', 'loose', 'itchy', 'small', 'tiny', 'huge', 'big', 'wide', 'narrow', 'smelly', 'long', 'short', 'worst', 'too thick', 'too thin', 'too heavy', 'too light', 'ugly', 'gross'];
 
-const positiveAdjectives = ['good', 'great', 'perfect', 'amazing', 'beautiful', 'gorgeous', 'wonderful', 'best'];
+const positiveAdjectives = ['good', 'great', 'perfect', 'amazing', 'beautiful', 'pleasant', 'gorgeous', 'wonderful', 'best'];
 
 const bottomsNouns = ['ankles', 'hips', 'knees', 'legs'];
 
@@ -95,7 +95,7 @@ const createBottoms = () => {
 
   bottomReview.wasThisReviewHelpfulNo = wasThisReviewHelpful[Math.floor(Math.random() * Math.floor(wasThisReviewHelpful.length))];
 
-  return bottomReview
+  return bottomReview;
 };
 
 const createTops = () => {
@@ -148,21 +148,22 @@ const createTops = () => {
 
 const createReviews = () => {
   let reviewsArr = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 250; i++) {
     reviewsArr.push(createTops());
   }
-  for (let j = 0; j < 10; j++) {
+  for (let j = 0; j < 250; j++) {
     reviewsArr.push(createBottoms());
   }
   return reviewsArr;
 }
 
 const insertMockData = () => {
-  let reviews = createReviews();
-  for (let i = 0; i < reviews.length; i++) {
-    let { rating, username, activeSinceDate, helpfulnessVotesThumbsUp, helpfulnessVotesThumbsDown, featured, location, athleticType, ageRange, bodyType, whatYouLike, whatYouDidntLike, reviewDate, revewTitle, reviewBody, wasThisReviewHelpfulYes, wasThisReviewHelpfulNo } = reviews[i];
-    Review.insertMany({ rating, username, activeSinceDate, helpfulnessVotesThumbsUp, helpfulnessVotesThumbsDown, featured, location, athleticType, ageRange, bodyType, whatYouLike, whatYouDidntLike, reviewDate, revewTitle, reviewBody, wasThisReviewHelpfulYes, wasThisReviewHelpfulNo });
-  }
+  let mockReviews = createReviews();
+  Review.insertMany(mockReviews)
+    .then((docs) => {
+      console.log(docs);
+    })
+    .catch((err) => console.error(err));
 }
 
 insertMockData();
