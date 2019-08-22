@@ -10,9 +10,44 @@ const range = (start, end) => {
   return ans;
 }
 
-// const randomDate = (start, end) => {
-//   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-// }
+const randomDate = (start, end) => {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
+const convertDate = (date) => {
+  date = date.toDateString().slice(4);
+  let month = date.slice(0, 3);
+  let dateString = '';
+  if (month === 'Jan') {
+    dateString += 'January';
+  } else if (month === 'Feb') {
+    dateString += 'February';
+  } else if (month === 'Mar') {
+    dateString += 'March';
+  } else if (month === 'Apr') {
+    dateString += 'April';
+  } else if (month === 'May') {
+    dateString += 'May';
+  } else if (month === 'Jun') {
+    dateString += 'June';
+  } else if (month === 'Jul') {
+    dateString += 'July';
+  } else if (month === 'Aug') {
+    dateString += 'August';
+  } else if (month === 'Sep') {
+    dateString += 'September';
+  } else if (month === 'Oct') {
+    dateString += 'October';
+  } else if (month === 'Nov') {
+    dateString += 'November';
+  } else if (month === 'Dec') {
+    dateString += 'December';
+  }
+  if (Number(date.slice(4, 6)) > 9) {
+  return `${dateString} ${date.slice(4, 6)}, ${date.slice(7)}`;
+  }
+  return `${dateString} ${date.slice(5, 6)}, ${date.slice(7)}`;
+}
 
 const usernameWords = ['LULU', 'PEANUT', 'LULUFAN', 'PEANUT', 'YOGAFAN', 'MARY', 'KATIE', 'BLESSED', 'YOGAGIRL', 'YOGI', 'PANTS', 'LOVEYOGA', 'YOGAGAL', 'EMILY', 'VIVIAN', 'JI'];
 
@@ -28,7 +63,7 @@ const helpfulnessVotesThumbs = range(0, 100);
 
 const featured = [true, false];
 
-const locations = ['BOULDER, CO', 'MILWAUKEE, WI', 'LOS ANGLES, CA', 'NEW YORK, NY', 'PORTLAND, OR', 'SAN FRANCISCO, CA', 'DENVER, CO', 'MADISON, WI', 'AUSTIN, TX', 'COLUMBUS, OH', 'CHICAGO, IL', 'ONTARIO, CANADA', 'SAN JOSE, CA', 'QUEBEC, CANADA', 'BRITISH COLUMBIA, CANADA', 'WASHINGTON, DC', 'AUKLAND, NEW ZEALAND', 'FARGO, ND', 'HOUSTON, TX', 'PHILADELPHIA, PA', 'SYNDEY, AUSTRALIA', 'NEW ORLEANS, LA', 'INDIANAPOLIS, IN', 'SEATTLE, WA', 'BOISE, ID', 'PHOENIX, AZ', 'BOSTON, MA', 'BALTIMORE, MD', 'MIAMI, FL', 'ATLANTA, GA', 'CHARLESTON, SC', 'NASHVILLE, TN', 'LOUISVILLE, KY', 'CINCINATTI, OH', 'OMAHA, NE'];
+const locations = ['BOULDER, CO', 'MILWAUKEE, WI', 'LOS ANGELES, CA', 'NEW YORK, NY', 'PORTLAND, OR', 'SAN FRANCISCO, CA', 'DENVER, CO', 'MADISON, WI', 'AUSTIN, TX', 'COLUMBUS, OH', 'CHICAGO, IL', 'ONTARIO, CANADA', 'SAN JOSE, CA', 'QUEBEC, CANADA', 'BRITISH COLUMBIA, CANADA', 'WASHINGTON, DC', 'AUKLAND, NEW ZEALAND', 'FARGO, ND', 'HOUSTON, TX', 'PHILADELPHIA, PA', 'SYNDEY, AUSTRALIA', 'NEW ORLEANS, LA', 'INDIANAPOLIS, IN', 'SEATTLE, WA', 'BOISE, ID', 'PHOENIX, AZ', 'BOSTON, MA', 'BALTIMORE, MD', 'MIAMI, FL', 'ATLANTA, GA', 'CHARLESTON, SC', 'NASHVILLE, TN', 'LOUISVILLE, KY', 'CINCINATTI, OH', 'OMAHA, NE'];
 
 const athleticTypes = ['YOGI', 'RUNNER', 'DANCER', 'CYCLIST', 'SWEATY-GENERALIST'];
 
@@ -77,7 +112,9 @@ const createBottoms = () => {
 
   bottomReview.whatYouDidntLike = `${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}`;
 
-  bottomReview.reviewDate = `${months[Math.floor(Math.random() * Math.floor(months.length))]} ${days[Math.floor(Math.random() * Math.floor(days.length))]}, ${years[Math.floor(Math.random() * Math.floor(years.length))]}`;
+  bottomReview.sortableReviewDate = randomDate(new Date(2014, 0, 1), new Date());
+
+  bottomReview.reviewDate = convertDate(bottomReview.sortableReviewDate);
 
   if (bottomReview.rating < 3) {
     bottomReview.reviewTitle = `${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}`
@@ -125,7 +162,9 @@ const createTops = () => {
 
   topReview.whatYouDidntLike = `${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}`;
 
-  topReview.reviewDate = `${months[Math.floor(Math.random() * Math.floor(months.length))]} ${days[Math.floor(Math.random() * Math.floor(days.length))]}, ${years[Math.floor(Math.random() * Math.floor(years.length))]}`;
+  topReview.sortableReviewDate = randomDate(new Date(2014, 0, 1), new Date());
+
+  topReview.reviewDate = convertDate(topReview.sortableReviewDate);
 
   if (topReview.rating < 3) {
     topReview.reviewTitle = `${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}`

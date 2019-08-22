@@ -23,5 +23,13 @@ router
   .route('/filter-by-body-type/:bodyType')
   .get(controller.filterByBodyType);
 
+router
+  .route('/sort-by-featured')
+  .get(controller.sortByFeatured);
+
+  router
+  .route('/sort-by-date')
+  .get(controller.sortByDate);
+
 
 module.exports = router;

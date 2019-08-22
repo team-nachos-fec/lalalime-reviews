@@ -21,6 +21,7 @@ let reviewSchema = new mongoose.Schema({
   whatYouLike: String,
   whatYouDidntLike: String,
   reviewDate: String,
+  sortableReviewDate: Date,
   reviewTitle: String,
   reviewBody: String,
   wasThisReviewHelpfulYes: Number,

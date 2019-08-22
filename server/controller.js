@@ -3,7 +3,9 @@ const {
   getReviewsByRating, 
   getReviewsByAthleticType,
   getReviewsByAgeRange,
-  getReviewsByBodyType
+  getReviewsByBodyType,
+  sortReviewsByFeatured,
+  sortReviewsByDate
 } = require('../database/dbhelpers.js');
 
 const controller = {
@@ -39,6 +41,20 @@ const controller = {
     getReviewsByBodyType({ bodyType })
       .then(reviews => res.status(200).send(reviews))
       .catch(err => res.status(400).send(err));
+  },
+  
+  sortByFeatured: (req, res) => {
+    let { featured } = req.params;
+    sortReviewsByFeatured({ featured })
+    .then(reviews => res.status(200).send(reviews))
+    .catch(err => res.status(400).send(err));
+  },
+
+  sortByDate: (req, res) => {
+    let { reviewDate } = req.params;
+    sortReviewsByDate({ reviewDate })
+    .then(reviews => res.status(200).send(reviews))
+    .catch(err => res.status(400).send(err));
   }
 
 };
