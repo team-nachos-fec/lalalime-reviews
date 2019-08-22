@@ -6,15 +6,23 @@ const getAllReviews = () => {
 
 // filter by rating
 const getReviewsByRating = (rating) => {
-  console.log(rating);
   return Review.find({ rating: { $eq: rating.rating } });
 };
 
 // filter by athleticType
+const getReviewsByAthleticType = (athleticType) => {
+  return Review.find({ athleticType: athleticType.athleticType.toUpperCase() });
+}
 
 // filter by ageRange
+const getReviewsByAgeRange = (ageRange) => {
+  return Review.find({ ageRange: ageRange.ageRange.toUpperCase() });
+} 
 
 // filter by bodyType
+const getReviewsByBodyType = (bodyType) => {
+  return Review.find({ bodyType: bodyType.bodyType.toUpperCase() });
+} 
 
 // sort by featured true first
 
@@ -24,4 +32,10 @@ const getReviewsByRating = (rating) => {
 
 // sort by rating ascending
 
-module.exports = { getAllReviews, getReviewsByRating };
+module.exports = { 
+  getAllReviews, 
+  getReviewsByRating, 
+  getReviewsByAthleticType,
+  getReviewsByAgeRange,
+  getReviewsByBodyType
+};
