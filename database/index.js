@@ -20,8 +20,8 @@ let reviewSchema = new mongoose.Schema({
   bodyType: String, 
   whatYouLike: String,
   whatYouDidntLike: String,
-  reviewDate: Date,
-  revewTitle: String,
+  reviewDate: String,
+  reviewTitle: String,
   reviewBody: String,
   wasThisReviewHelpfulYes: Number,
   wasThisReviewHelpfulNo: Number

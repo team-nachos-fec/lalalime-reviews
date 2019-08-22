@@ -10,9 +10,9 @@ const range = (start, end) => {
   return ans;
 }
 
-const randomDate = (start, end) => {
-  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-}
+// const randomDate = (start, end) => {
+//   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+// }
 
 const usernameWords = ['LULU', 'PEANUT', 'LULUFAN', 'PEANUT', 'YOGAFAN', 'MARY', 'KATIE', 'BLESSED', 'YOGAGIRL', 'YOGI', 'PANTS', 'LOVEYOGA', 'YOGAGAL', 'EMILY', 'VIVIAN', 'JI'];
 
@@ -80,9 +80,9 @@ const createBottoms = () => {
   bottomReview.reviewDate = `${months[Math.floor(Math.random() * Math.floor(months.length))]} ${days[Math.floor(Math.random() * Math.floor(days.length))]}, ${years[Math.floor(Math.random() * Math.floor(years.length))]}`;
 
   if (bottomReview.rating < 3) {
-    bottomReview.reviewTitle = `${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}`;
+    bottomReview.reviewTitle = `${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}`
   } else {
-    bottomReview.reviewTitle = `${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}`;
+    bottomReview.reviewTitle = `${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} in the ${bottomsNouns[Math.floor(Math.random() * Math.floor(bottomsNouns.length))]}`
   }
 
   if (bottomReview.rating < 3) {
@@ -128,9 +128,9 @@ const createTops = () => {
   topReview.reviewDate = `${months[Math.floor(Math.random() * Math.floor(months.length))]} ${days[Math.floor(Math.random() * Math.floor(days.length))]}, ${years[Math.floor(Math.random() * Math.floor(years.length))]}`;
 
   if (topReview.rating < 3) {
-    topReview.reviewTitle = `${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}`;
+    topReview.reviewTitle = `${negativeAdjectives[Math.floor(Math.random() * Math.floor(negativeAdjectives.length))]} in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}`
   } else {
-    topReview.reviewTitle = `${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}`;
+    topReview.reviewTitle = `${positiveAdjectives[Math.floor(Math.random() * Math.floor(positiveAdjectives.length))]} in the ${topsNouns[Math.floor(Math.random() * Math.floor(topsNouns.length))]}`
   }
 
   if (topReview.rating < 3) {
