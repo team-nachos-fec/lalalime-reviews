@@ -49,7 +49,7 @@ const convertDate = (date) => {
   return `${dateString} ${date.slice(5, 6)}, ${date.slice(7)}`;
 }
 
-const usernameWords = ['LULU', 'PEANUT', 'LULUFAN', 'PEANUT', 'YOGAFAN', 'MARY', 'KATIE', 'BLESSED', 'YOGAGIRL', 'YOGI', 'PANTS', 'LOVEYOGA', 'YOGAGAL', 'EMILY', 'VIVIAN', 'JI'];
+const usernameWords = ['lulu', 'peanut', 'lulufan', 'yogafan', 'mary', 'katie', 'blessed', 'yogagirl', 'yogi', 'pants', 'loveyoga', 'yogagal', 'emily', 'vivian', 'ji'];
 
 const usernameNumbers = range(1000, 9999);
 
@@ -63,13 +63,13 @@ const helpfulnessVotesThumbs = range(0, 100);
 
 const featured = [true, false];
 
-const locations = ['BOULDER, CO', 'MILWAUKEE, WI', 'LOS ANGELES, CA', 'NEW YORK, NY', 'PORTLAND, OR', 'SAN FRANCISCO, CA', 'DENVER, CO', 'MADISON, WI', 'AUSTIN, TX', 'COLUMBUS, OH', 'CHICAGO, IL', 'ONTARIO, CANADA', 'SAN JOSE, CA', 'QUEBEC, CANADA', 'BRITISH COLUMBIA, CANADA', 'WASHINGTON, DC', 'AUKLAND, NEW ZEALAND', 'FARGO, ND', 'HOUSTON, TX', 'PHILADELPHIA, PA', 'SYNDEY, AUSTRALIA', 'NEW ORLEANS, LA', 'INDIANAPOLIS, IN', 'SEATTLE, WA', 'BOISE, ID', 'PHOENIX, AZ', 'BOSTON, MA', 'BALTIMORE, MD', 'MIAMI, FL', 'ATLANTA, GA', 'CHARLESTON, SC', 'NASHVILLE, TN', 'LOUISVILLE, KY', 'CINCINATTI, OH', 'OMAHA, NE'];
+const locations = ['boulder, co', 'milwaukee, wi', 'los angeles, ca', 'new york, ny', 'portland, or', 'san francisco, ca', 'denver, co', 'madison, wi', 'austin, tx', 'columbus, oh', 'chicago, il', 'ontario, canada', 'san jose, ca', 'quebec, canada', 'british columbia, canada', 'washington, dc', 'aukland, new zealand', 'fargo, nd', 'houston, tx', 'philadelphia, pa', 'sydney, austraia', 'new orleans, la', 'indianapolis, in', 'seattle, wa', 'boise, id', 'phoenix, az', 'boston, ma', 'baltimore, md', 'miami, fl', 'atlanta, ga', 'charleston, sc', 'nashville, tn', 'louisville, ky', 'cincinnati, oh', 'omaha, ne'];
 
-const athleticTypes = ['YOGI', 'RUNNER', 'DANCER', 'CYCLIST', 'SWEATY-GENERALIST'];
+const athleticTypes = ['yogi', 'runner', 'dancer', 'cyclist', 'sweaty-generalist'];
 
-const ageRanges = ['UNDER-18', '18-24', '25-34', '35-44', '45-54', '55-65', 'OVER-65', 'I-KEEP-MY-AGE-ON-THE-DL'];
+const ageRanges = ['under-18', '18-24', '25-34', '35-44', '45-54', '55-65', 'over-65', 'i-keep-my-age-on-the-dl'];
 
-const bodyTypes = ['ATHLETIC', 'CURVY', 'LEAN', 'MUSCULAR', 'PETITE', 'SLIM', 'SOLID'];
+const bodyTypes = ['athletic', 'curvy', 'lean', 'muscular', 'petite', 'slim', 'solid'];
 
 const wasThisReviewHelpful = range(0, 20);
 

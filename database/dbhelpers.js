@@ -11,17 +11,17 @@ const getReviewsByRating = (rating) => {
 
 // filter by athleticType
 const getReviewsByAthleticType = (athleticType) => {
-  return Review.find({ athleticType: athleticType.athleticType.toUpperCase() });
+  return Review.find({ athleticType: athleticType.athleticType });
 }
 
 // filter by ageRange
 const getReviewsByAgeRange = (ageRange) => {
-  return Review.find({ ageRange: ageRange.ageRange.toUpperCase() });
+  return Review.find({ ageRange: ageRange.ageRange });
 } 
 
 // filter by bodyType
 const getReviewsByBodyType = (bodyType) => {
-  return Review.find({ bodyType: bodyType.bodyType.toUpperCase() });
+  return Review.find({ bodyType: bodyType.bodyType });
 } 
 
 // sort by featured true first
