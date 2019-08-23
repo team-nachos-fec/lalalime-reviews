@@ -81,6 +81,33 @@ class App extends React.Component {
           </select>
           </span>
         </div>
+        <div className="review">
+          <div className="review-profile">
+            <img src="https://lululemon.ugc.bazaarvoice.com/7834redes/5_0/5/rating.gif" alt="5 out of 5" title="5 out of 5"/>
+            <div>username</div>
+            {/* TODO: MAKE POPUP WHEN HOVERED OVER */}
+            <div>athletic type</div>
+            <div>body type</div>
+            <div>what you like</div>
+            <div>what you don't like</div>
+          </div>
+        </div>
+        <div className="review-content">
+          <div>review date</div>
+          <div>review title</div>
+          <div>review body</div>
+          <div className="review-footer">
+            <span>was this reivew helpful to you</span>
+            <span><a href="#" title="Yes">yes</a></span>
+            {/* TODO: MAKE POPUP WHEN CLICKED */}
+            {/* TODO: CONDITIALLY RENDER NUMBER TO INCREASE OR DECREASE WHEN CLICKED */}
+            <span><a href="#" title="No">no</a></span>
+            {/* TODO: MAKE POPUP WHEN CLICKED */}
+            {/* TODO: CONDITIALLY RENDER NUMBER TO INCREASE OR DECREASE WHEN CLICKED */}
+            <span><a href="#" title="Report">report as inappropriate</a></span>
+            {/* TODO: MAKE POPUP WHEN CLICKED */}
+          </div>
+        </div>
       </div>
     );
   }
