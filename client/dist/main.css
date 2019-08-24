@@ -200,6 +200,7 @@ i {
   padding-top: 50px;
   width: 60%;
   text-align: left;
+  z-index: 10;
 }
 
 .username {
@@ -284,4 +285,64 @@ i {
   text-align: left;
   max-width: 750px;
   padding-right: 50px;
+}
+
+.review-footer {
+  border-top: 1px dotted #999999;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.footer-question {
+  font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
+  color: #666666;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.footer-answer a {
+  padding: 0 10px;
+  border-right: 1px solid #938454;
+  text-decoration: none;
+  font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
+  color: #938454;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.footer-report a {
+  padding: 0 10px;
+  text-decoration: none;
+  font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
+  color: #938454;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.review-page-links {
+  text-align: center;
+  margin: 20px 0 250px 0;
+}
+
+.review-page-links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
+  color: #CCC;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 10px;
+  /* : 5px; */
+}
+
+.test {
+  cursor: pointer;
 }

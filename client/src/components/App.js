@@ -41,12 +41,12 @@ class App extends React.Component {
             <div className="review-separator"></div>
           </div>
           <div className="review-page-links">
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">next</a>
+            <a href="url" title="1">1</a>
+            <a href="url" title="2">2</a>
+            <a href="url" title="3">3</a>
+            <a href="url" title="4">4</a>
+            <a href="url" title="5">5</a>
+            <a href="url" title="next">next</a>
           </div>
         </div>
       </div>

@@ -21,56 +21,56 @@ class FiltersAndSorts extends React.Component {
           <div className="filter-dropdown">
             <button onClick="myFunction()" className="dropbtn" title="See more 'rating' filters">rating<i className="fa fa-caret-down"></i></button>
             <div className="dropdown-content">
-              <a href="#">1 star</a>
-              <a href="#">2 stars</a>
-              <a href="#">3 stars</a>
-              <a href="#">4 stars</a>
-              <a href="#">5 stars</a>
+              <a href="url">1 star</a>
+              <a href="url">2 stars</a>
+              <a href="url">3 stars</a>
+              <a href="url">4 stars</a>
+              <a href="url">5 stars</a>
             </div>
           </div>
           <div className="filter-dropdown">
             <button onClick="myFunction()" className="dropbtn" title="See more 'athletic type' filters">athletic type<i className="fa fa-caret-down"></i></button>
             <span className="dropdown-content">
-              <a href="#">yogi</a>
-              <a href="#">runner</a>
-              <a href="#">dancer</a>
-              <a href="#">cyclist</a>
-              <a href="#">sweaty generalist</a>
+              <a href="url">yogi</a>
+              <a href="url">runner</a>
+              <a href="url">dancer</a>
+              <a href="url">cyclist</a>
+              <a href="url">sweaty generalist</a>
             </span>
           </div>
           <div className="filter-dropdown">
             <button onClick="myFunction()" className="dropbtn" title="See more 'age' filters">age<i className="fa fa-caret-down"></i></button>
             <span className="dropdown-content">
-              <a href="#">under 18</a>
-              <a href="#">18-24</a>
-              <a href="#">25-34</a>
-              <a href="#">35-44</a>
-              <a href="#">45-54</a>
-              <a href="#">55-65</a>
-              <a href="#">over 65</a>
-              <a href="#">i prefer to keep my age on the d.l.</a>
+              <a href="url">under 18</a>
+              <a href="url">18-24</a>
+              <a href="url">25-34</a>
+              <a href="url">35-44</a>
+              <a href="url">45-54</a>
+              <a href="url">55-65</a>
+              <a href="url">over 65</a>
+              <a href="url">i prefer to keep my age on the d.l.</a>
             </span>
           </div>
           <div className="filter-dropdown">
             <button onClick="myFunction()" className="dropbtn" title="See more 'body type' filters">body type<i className="fa fa-caret-down"></i></button>
             <span className="dropdown-content">
-              <a href="#">athelic</a>
-              <a href="#">curvy</a>
-              <a href="#">lean</a>
-              <a href="#">muscular</a>
-              <a href="#">petite</a>
-              <a href="#">slim</a>
-              <a href="#">solid</a>
+              <a href="url">athelic</a>
+              <a href="url">curvy</a>
+              <a href="url">lean</a>
+              <a href="url">muscular</a>
+              <a href="url">petite</a>
+              <a href="url">slim</a>
+              <a href="url">solid</a>
             </span>
           </div>
           <div className="sort-dropdown">
             <button onClick="myFunction()" className="dropbtn" title="See more 'athletic type' filters">choose a sort order<i className="fa fa-caret-down"></i></button>
             <span className="dropdown-content">
-              <a href="#">choose a sort order</a>
-              <a href="#">featured reviews first</a>
-              <a href="#">date-newest first</a>
-              <a href="#">rating-high to low</a>
-              <a href="#">rating-low to high</a>
+              <a href="url">choose a sort order</a>
+              <a href="url">featured reviews first</a>
+              <a href="url">date-newest first</a>
+              <a href="url">rating-high to low</a>
+              <a href="url">rating-low to high</a>
             </span>
           </div>
           {/* <span className="sort-dropdown">

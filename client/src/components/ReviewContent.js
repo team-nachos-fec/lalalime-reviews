@@ -17,14 +17,14 @@ class ReviewContent extends React.Component {
         <div className="review-title">review title</div>
         <div className="review-body">review body asdfasdf asdfasdf asdf asdf asdf asdf asdfasdfaasdfasdfadfsdfasdfasdfasdfasdf asdfasdf asf sf adsf asdf asdf asdf asdf asdfsdfasdf asdf asdfa aasdfasdfsafasdf</div>
         <div className="review-footer">
-          <span>was this reivew helpful to you</span>
-          <span><a href="#" title="Yes">yes</a></span>
+          <span className="footer-question">Was this reivew helpful to you?</span>
+          <span className="footer-answer"><a href="" title="Yes" >yes &#40; 0 &#41;</a></span>
           {/* TODO: MAKE POPUP WHEN CLICKED */}
           {/* TODO: CONDITIALLY RENDER NUMBER TO INCREASE OR DECREASE WHEN CLICKED */}
-          <span><a href="#" title="No">no</a></span>
+          <span className="footer-answer"><a href="" title="No">no &#40; 0 &#41;</a></span>
           {/* TODO: MAKE POPUP WHEN CLICKED */}
           {/* TODO: CONDITIALLY RENDER NUMBER TO INCREASE OR DECREASE WHEN CLICKED */}
-          <span><a href="#" title="Report">report as inappropriate</a></span>
+          <span className="footer-report"><a href="" title="Report">report as inappropriate</a></span>
           {/* TODO: MAKE POPUP WHEN CLICKED */}
         </div>
       </div>
