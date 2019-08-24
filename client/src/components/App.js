@@ -27,7 +27,7 @@ class App extends React.Component {
             <img src="https://lululemon.ugc.bazaarvoice.com/7834redes/3_7/5/rating.gif" alt="3.7 out of 5" title="3.7 out of 5"/>
           </div>
           <div>
-            <a href="url" title="Create a review" className="create-review">create a review</a>
+            <a href="#" title="Create a review" className="create-review">create a review</a>
           </div>
         </div>
         <div>
@@ -41,12 +41,12 @@ class App extends React.Component {
             <div className="review-separator"></div>
           </div>
           <div className="review-page-links">
-            <a href="url" title="1">1</a>
-            <a href="url" title="2">2</a>
-            <a href="url" title="3">3</a>
-            <a href="url" title="4">4</a>
-            <a href="url" title="5">5</a>
-            <a href="url" title="next">next</a>
+            <a href="#" title="1">1</a>
+            <a href="#" title="2">2</a>
+            <a href="#" title="3">3</a>
+            <a href="#" title="4">4</a>
+            <a href="#" title="5">5</a>
+            <a href="#" title="next">next</a>
           </div>
         </div>
       </div>
