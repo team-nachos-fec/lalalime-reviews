@@ -63,15 +63,25 @@ class FiltersAndSorts extends React.Component {
               <a href="#">solid</a>
             </span>
           </div>
-          <span className="sort-dropdown">
-          <select className="dropdown">
+          <div className="sort-dropdown">
+            <button onClick="myFunction()" className="dropbtn" title="See more 'athletic type' filters">choose a sort order<i className="fa fa-caret-down"></i></button>
+            <span className="dropdown-content">
+              <a href="#">choose a sort order</a>
+              <a href="#">featured reviews first</a>
+              <a href="#">date-newest first</a>
+              <a href="#">rating-high to low</a>
+              <a href="#">rating-low to high</a>
+            </span>
+          </div>
+          {/* <span className="sort-dropdown">
+          <select className="dropdown" className="dropbtn" >
             <option value="choose">choose a sort order</option>
             <option value="API ENDPOINT">featured reviews first</option>
             <option value="API ENDPOINT">date-newest first</option>
             <option value="API ENDPOINT">rating-high to low</option>
             <option value="API ENDPOINT">rating-low to high</option>
           </select>
-          </span>
+          </span> */}
         </div>
       </div>
     )

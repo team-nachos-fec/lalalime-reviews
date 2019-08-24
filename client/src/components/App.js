@@ -17,7 +17,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="review-header">
-          <div className="review-title">
+          <div className="reviews-title">
             reviews
           </div>
           <div className="review-question">
@@ -31,17 +31,27 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <div> <FiltersAndSorts /> </div>
-          <div className="separator"></div>
-          <div className="review">
-            <div><ReviewProfile /></div>
-            <div><ReviewContent /></div>
+          <div><FiltersAndSorts /></div>
+          <div className="parent">
+            <div className="separator"></div>
+            <div className="review">
+              <div><ReviewProfile /></div>
+              <div><ReviewContent /></div>
+            </div>
+            <div className="review-separator"></div>
+          </div>
+          <div className="review-page-links">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">next</a>
           </div>
         </div>
       </div>
     );
   }
-
 }
 
 export default App;

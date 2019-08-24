@@ -13,9 +13,9 @@ class ReviewContent extends React.Component {
   render() {
     return (
       <div className="review-content">
-        <div>review date</div>
-        <div>review title</div>
-        <div>review body</div>
+        <div className="review-date">August 24, 2019</div>
+        <div className="review-title">review title</div>
+        <div className="review-body">review body asdfasdf asdfasdf asdf asdf asdf asdf asdfasdfaasdfasdfadfsdfasdfasdfasdfasdf asdfasdf asf sf adsf asdf asdf asdf asdf asdfsdfasdf asdf asdfa aasdfasdfsafasdf</div>
         <div className="review-footer">
           <span>was this reivew helpful to you</span>
           <span><a href="#" title="Yes">yes</a></span>
