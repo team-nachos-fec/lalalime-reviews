@@ -1,16 +1,32 @@
 import React from 'react';
 import FiltersAndSorts from './FiltersAndSorts';
-import ReviewProfile from './ReviewProfile';
-import ReviewContent from './ReviewContent';
+import Reviews from './Reviews'
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
+      reviews: []
     };
 
+    this.getReviews = this.getReviews.bind(this);
+  }
+
+  componentDidMount() {
+    this.getReviews();
+  }
+
+  getReviews() {
+    axios
+      .get('/api')
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
   }
 
   render() {
@@ -35,8 +51,9 @@ class App extends React.Component {
           <div className="parent">
             <div className="separator"></div>
             <div className="review">
-              <div><ReviewProfile /></div>
-              <div><ReviewContent /></div>
+              <div>
+                <Reviews reviews={this.state.reviews} />
+              </div>
             </div>
             <div className="review-separator"></div>
           </div>

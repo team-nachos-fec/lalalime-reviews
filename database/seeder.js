@@ -187,10 +187,10 @@ const createTops = () => {
 
 const createReviews = () => {
   let reviewsArr = [];
-  for (let i = 0; i < 250; i++) {
-    reviewsArr.push(createTops());
-  }
-  for (let j = 0; j < 250; j++) {
+  // for (let i = 0; i < 250; i++) {
+  //   reviewsArr.push(createTops());
+  // }
+  for (let j = 0; j < 10; j++) {
     reviewsArr.push(createBottoms());
   }
   return reviewsArr;

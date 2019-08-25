@@ -10,10 +10,6 @@ class FiltersAndSorts extends React.Component {
 
   }
 
-  handleClick(event) {
-    
-  }
-
   render() {
     return (
       <div>
