@@ -11,10 +11,11 @@ class ReviewContent extends React.Component {
   }
 
   render() {
+    
     return (
       <div className="container">
         <div className="review-profile">
-          <img src="https://lululemon.ugc.bazaarvoice.com/7834redes/5_0/5/rating.gif" alt="5 out of 5" title="5 out of 5"/>
+          <div className="rating"><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${this.props.review.rating}_0/5/rating.gif`} alt={`${this.props.review.rating} out of 5`} title={`${this.props.review.rating} out of 5`}/></div>
           <div className="username">{this.props.review.username}</div>
           {/* TODO: MAKE POPUP WHEN HOVERED OVER */}
           <div className="user-properties">

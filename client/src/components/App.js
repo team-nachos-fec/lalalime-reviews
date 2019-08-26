@@ -30,6 +30,13 @@ class App extends React.Component {
   }
 
   render() {
+    let sum = 0;
+    for (var i = 0; i < this.state.reviews.length; i++) {
+      sum += this.state.reviews[i].rating;
+    }
+    let average = sum / this.state.reviews.length;
+    let averageString = average.toString().split('.').join('_');
+
     return (
       <div>
         <div className="review-header">
@@ -40,7 +47,7 @@ class App extends React.Component {
             How's this gear working for you?
           </div>
           <div className="average-rating">
-            <img src="https://lululemon.ugc.bazaarvoice.com/7834redes/3_7/5/rating.gif" alt="3.7 out of 5" title="3.7 out of 5"/>
+            <img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${averageString}/5/rating.gif`} alt={`${average} out of 5`} title={`${average} out of 5`}/>
           </div>
           <div>
             <a href="#" title="Create a review" className="create-review">create a review</a>
