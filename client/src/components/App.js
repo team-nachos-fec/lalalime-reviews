@@ -11,7 +11,6 @@ class App extends React.Component {
       reviews: []
     };
 
-    this.getReviews = this.getReviews.bind(this);
     this.handleSortClick = this.handleSortClick.bind(this);
     this.handleRatingClick = this.handleRatingClick.bind(this);
     this.handleAthleticClick = this.handleAthleticClick.bind(this);
@@ -21,21 +20,12 @@ class App extends React.Component {
     this.filterReviewsByAthleticType = this.filterReviewsByAthleticType.bind(this);
     this.filterReviewsByAge = this.filterReviewsByAge.bind(this);
     this.filterReviewsByBodyType = this.filterReviewsByBodyType.bind(this);
+    this.sortByFeatured = this.sortByFeatured.bind(this);
+    this.sortByDate = this.sortByDate.bind(this);
   }
 
   componentDidMount() {
-    this.getReviews();
-  }
-
-  getReviews() {
-    axios
-      .get('/api')
-      .then((reviews) => {
-        this.setState({
-          reviews: reviews.data
-        })
-      })
-      .catch(err => console.error(err));
+    this.sortByDate();
   }
 
   filterReviewsByRating(rating) {
@@ -82,10 +72,38 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+  sortByFeatured() {
+    axios
+      .get('/api/sort-by-featured')
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
+  sortByDate() {
+    axios
+      .get('/api/sort-by-date')
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
   handleSortClick(event) {
     event.preventDefault();
     console.log('clicked');
-    $('#sort-dropdown').toggleClass('show');
+    $('#sort-dropdown').addClass('show');
+
+    $(':not(#sort-dropdown)').on('click', function() {
+      console.log('elsewhere clicked')
+      $('#sort-dropdown').addClass('hide');
+      // $('#rating-dropdown').addClass('show');
+    });
   }
 
   handleRatingClick(event) {
@@ -103,8 +121,6 @@ class App extends React.Component {
     //   $('#rating-dropdown').addClass('hide');
     // });
   }
-
-
 
   handleAthleticClick(event) {
     event.preventDefault();
@@ -177,6 +193,8 @@ class App extends React.Component {
           filterReviewsByAthleticType={this.filterReviewsByAthleticType}
           filterReviewsByAge={this.filterReviewsByAge}
           filterReviewsByBodyType={this.filterReviewsByBodyType}
+          sortByFeatured={this.sortByFeatured}
+          sortByDate={this.sortByDate}
           /></div>
           <div className="separator"></div>
           <div>

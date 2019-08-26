@@ -63,8 +63,8 @@ class FiltersAndSorts extends React.Component {
             <button onClick={(event)=>{this.props.handleSortClick(event)}} id="sort-dropbtn" className="dropbtn" title="See more 'athletic type' filters">choose a sort order<i className="fa fa-caret-down"></i></button>
             <span id="sort-dropdown" className="dropdown-content">
               <a href="#">choose a sort order &#40;0&#41;</a>
-              <a href="#">featured reviews first &#40;0&#41;</a>
-              <a href="#">date-newest first &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.sortByFeatured()}}>featured reviews first &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.sortByDate()}}>date-newest first &#40;0&#41;</a>
               <a href="#">rating-high to low &#40;0&#41;</a>
               <a href="#">rating-low to high &#40;0&#41;</a>
             </span>
