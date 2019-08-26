@@ -11,6 +11,9 @@ class ReviewContent extends React.Component {
   }
 
   render() {
+    if (this.props.review.ageRange === 'i-keep-my-age-on-the-dl') {
+      this.props.review.ageRange = 'i keep my age on the d.l.'
+    }
     
     return (
       <div className="container">

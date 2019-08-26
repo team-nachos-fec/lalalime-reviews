@@ -44,19 +44,19 @@ class FiltersAndSorts extends React.Component {
               <a href="#" onClick={()=> {this.props.filterReviewsByAge('45-54')}}>45-54 &#40;0&#41;</a>
               <a href="#" onClick={()=> {this.props.filterReviewsByAge('55-65')}}>55-65 &#40;0&#41;</a>
               <a href="#" onClick={()=> {this.props.filterReviewsByAge('over-65')}}>over 65 &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('i-prefer-to-keep-my-age-on-the-dl')}}>i prefer to keep my age on the d.l. &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('i-keep-my-age-on-the-dl')}}>i keep my age on the d.l. &#40;0&#41;</a>
             </span>
           </div>
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleBodyClick(event)}} className="dropbtn" title="See more 'body type' filters">body type<i className="fa fa-caret-down"></i></button>
             <span id="body-dropdown" className="dropdown-content">
-              <a href="#">athletic &#40;0&#41;</a>
-              <a href="#">curvy &#40;0&#41;</a>
-              <a href="#">lean &#40;0&#41;</a>
-              <a href="#">muscular &#40;0&#41;</a>
-              <a href="#">petite &#40;0&#41;</a>
-              <a href="#">slim &#40;0&#41;</a>
-              <a href="#">solid &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('athletic')}}>athletic &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('curvy')}}>curvy &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('lean')}}>lean &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('muscular')}}>muscular &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('petite')}}>petite &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('slim')}}>slim &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('solid')}}>solid &#40;0&#41;</a>
             </span>
           </div>
           <div className="sort-dropdown">
