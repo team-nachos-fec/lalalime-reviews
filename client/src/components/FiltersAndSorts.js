@@ -65,8 +65,8 @@ class FiltersAndSorts extends React.Component {
               <a href="#">choose a sort order &#40;0&#41;</a>
               <a href="#" onClick={()=> {this.props.sortByFeatured()}}>featured reviews first &#40;0&#41;</a>
               <a href="#" onClick={()=> {this.props.sortByDate()}}>date-newest first &#40;0&#41;</a>
-              <a href="#">rating-high to low &#40;0&#41;</a>
-              <a href="#">rating-low to high &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.sortByRatingDescending()}}>rating-high to low &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.sortByRatingAscending()}}>rating-low to high &#40;0&#41;</a>
             </span>
           </div>
           {/* <span className="sort-dropdown">

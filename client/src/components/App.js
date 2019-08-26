@@ -22,6 +22,8 @@ class App extends React.Component {
     this.filterReviewsByBodyType = this.filterReviewsByBodyType.bind(this);
     this.sortByFeatured = this.sortByFeatured.bind(this);
     this.sortByDate = this.sortByDate.bind(this);
+    this.sortByRatingDescending = this.sortByRatingDescending.bind(this);
+    this.sortByRatingAscending = this.sortByRatingAscending.bind(this);
   }
 
   componentDidMount() {
@@ -86,6 +88,28 @@ class App extends React.Component {
   sortByDate() {
     axios
       .get('/api/sort-by-date')
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
+  sortByRatingDescending() {
+    axios
+      .get('/api/sort-by-rating-descending')
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
+  sortByRatingAscending() {
+    axios
+      .get('/api/sort-by-rating-ascending')
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
@@ -195,6 +219,8 @@ class App extends React.Component {
           filterReviewsByBodyType={this.filterReviewsByBodyType}
           sortByFeatured={this.sortByFeatured}
           sortByDate={this.sortByDate}
+          sortByRatingDescending={this.sortByRatingDescending}
+          sortByRatingAscending={this.sortByRatingAscending}
           /></div>
           <div className="separator"></div>
           <div>
