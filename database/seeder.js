@@ -73,9 +73,9 @@ const bodyTypes = ['athletic', 'curvy', 'lean', 'muscular', 'petite', 'slim', 's
 
 const wasThisReviewHelpful = range(0, 20);
 
-const negativeAdjectives = ['tight', 'loose', 'itchy', 'small', 'tiny', 'huge', 'big', 'wide', 'narrow', 'smelly', 'long', 'short', 'worst', 'too thick', 'too thin', 'too heavy', 'too light', 'ugly', 'gross'];
+const negativeAdjectives = ['tight', 'loose', 'itchy', 'small', 'tiny', 'huge', 'big', 'wide', 'narrow', 'smelly', 'long', 'short', 'the worst', 'too thick', 'too thin', 'too heavy', 'too light', 'ugly', 'gross'];
 
-const positiveAdjectives = ['good', 'great', 'perfect', 'amazing', 'beautiful', 'pleasant', 'gorgeous', 'wonderful', 'best'];
+const positiveAdjectives = ['good', 'great', 'perfect', 'amazing', 'beautiful', 'pleasant', 'gorgeous', 'wonderful', 'the best'];
 
 const bottomsNouns = ['ankles', 'hips', 'knees', 'legs'];
 
