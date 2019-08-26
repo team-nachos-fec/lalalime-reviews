@@ -18,6 +18,9 @@ class App extends React.Component {
     this.handleAgeClick = this.handleAgeClick.bind(this);
     this.handleBodyClick = this.handleBodyClick.bind(this);
     this.filterReviewsByRating = this.filterReviewsByRating.bind(this);
+    this.filterReviewsByAthleticType = this.filterReviewsByAthleticType.bind(this);
+    this.filterReviewsByAge = this.filterReviewsByAge.bind(this);
+    this.filterReviewsByBodyType = this.filterReviewsByBodyType.bind(this);
   }
 
   componentDidMount() {
@@ -36,9 +39,41 @@ class App extends React.Component {
   }
 
   filterReviewsByRating(rating) {
-    console.log(rating);
     axios
-      .get(`api/filter-by-rating/${rating}`, { rating })
+      .get(`/api/filter-by-rating/${rating}`)
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
+  filterReviewsByAthleticType(athleticType) {
+    axios
+      .get(`/api/filter-by-athletic-type/${athleticType}`)
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
+  filterReviewsByAge(ageRange) {
+    axios
+      .get(`/api/filter-by-age-range/${ageRange}`)
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
+  filterReviewsByBodyType(bodyType) {
+    axios
+      .get(`/api/filter-by-body-type/${bodyType}`)
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
@@ -74,28 +109,37 @@ class App extends React.Component {
   handleAthleticClick(event) {
     event.preventDefault();
     console.log('clicked');
-    $('#athletic-dropdown').toggleClass('show');
-    // $('body').click(function() {
-    //   $('#athletic-dropdown').addClass('hide');
-    // });
+    $('#athletic-dropdown').addClass('show');
+
+    $(':not(#athletic-dropdown)').on('click', function() {
+      console.log('elsewhere clicked')
+      $('#athletic-dropdown').addClass('hide');
+      // $('#rating-dropdown').addClass('show');
+    });
   }
 
   handleAgeClick(event) {
     event.preventDefault();
     console.log('clicked');
-    $('#age-dropdown').toggleClass('show');
-    // $('body').click(function() {
-    //   $('#age-dropdown').addClass('hide');
-    // });
+    $('#age-dropdown').addClass('show');
+
+    $(':not(#age-dropdown)').on('click', function() {
+      console.log('elsewhere clicked')
+      $('#age-dropdown').addClass('hide');
+      // $('#rating-dropdown').addClass('show');
+    });
   }
 
   handleBodyClick(event) {
     event.preventDefault();
     console.log('clicked');
-    $('#body-dropdown').toggleClass('show');
-    // $('body').click(function() {
-    //   $('#body-dropdown').addClass('hide');
-    // });
+    $('#body-dropdown').addClass('show');
+
+    $(':not(#body-dropdown)').on('click', function() {
+      console.log('elsewhere clicked')
+      $('#body-dropdown').addClass('hide');
+      // $('#rating-dropdown').addClass('show');
+    });
   }
 
   render() {
@@ -130,6 +174,9 @@ class App extends React.Component {
           handleAgeClick={this.handleAgeClick} 
           handleBodyClick={this.handleBodyClick} 
           filterReviewsByRating={this.filterReviewsByRating}
+          filterReviewsByAthleticType={this.filterReviewsByAthleticType}
+          filterReviewsByAge={this.filterReviewsByAge}
+          filterReviewsByBodyType={this.filterReviewsByBodyType}
           /></div>
           <div className="separator"></div>
           <div>

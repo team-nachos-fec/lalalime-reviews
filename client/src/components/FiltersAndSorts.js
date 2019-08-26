@@ -17,34 +17,34 @@ class FiltersAndSorts extends React.Component {
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleRatingClick(event)}} id="rating-dropbtn" className="dropbtn" title="See more 'rating' filters">rating<i className="fa fa-caret-down"></i></button>
             <div id="rating-dropdown" className="dropdown-content">
-              <a href="#">1 star &#40;0&#41;</a>
-              <a href="#">2 stars &#40;0&#41;</a>
-              <a href="#">3 stars &#40;0&#41;</a>
-              <a href="#" onClick={(rating)=> {this.props.filterReviewsByRating(rating)}}>4 stars &#40;0&#41;</a>
-              <a href="#">5 stars &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByRating(1)}}>1 star &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByRating(2)}}>2 stars &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByRating(3)}}>3 stars &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByRating(4)}}>4 stars &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByRating(5)}}>5 stars &#40;0&#41;</a>
             </div>
           </div>
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleAthleticClick(event)}} className="dropbtn" title="See more 'athletic type' filters">athletic type<i className="fa fa-caret-down"></i></button>
             <span id="athletic-dropdown" className="dropdown-content">
-              <a href="#">yogi &#40;0&#41;</a>
-              <a href="#">runner &#40;0&#41;</a>
-              <a href="#">dancer &#40;0&#41;</a>
-              <a href="#">cyclist &#40;0&#41;</a>
-              <a href="#">sweaty generalist &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('yogi')}}>yogi &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('runner')}}>runner &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('dancer')}}>dancer &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('cyclist')}}>cyclist &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('sweaty-generalist')}}>sweaty generalist &#40;0&#41;</a>
             </span>
           </div>
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleAgeClick(event)}} className="dropbtn" title="See more 'age' filters">age<i className="fa fa-caret-down"></i></button>
             <span id="age-dropdown" className="dropdown-content">
-              <a href="#">under 18 &#40;0&#41;</a>
-              <a href="#">18-24 &#40;0&#41;</a>
-              <a href="#">25-34 &#40;0&#41;</a>
-              <a href="#">35-44 &#40;0&#41;</a>
-              <a href="#">45-54 &#40;0&#41;</a>
-              <a href="#">55-65 &#40;0&#41;</a>
-              <a href="#">over 65 &#40;0&#41;</a>
-              <a href="#">i prefer to keep my age on the d.l. &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('under-18')}}>under 18 &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('18-24')}}>18-24 &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('25-34')}}>25-34 &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('35-44')}}>35-44 &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('45-54')}}>45-54 &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('55-65')}}>55-65 &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('over-65')}}>over 65 &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('i-prefer-to-keep-my-age-on-the-dl')}}>i prefer to keep my age on the d.l. &#40;0&#41;</a>
             </span>
           </div>
           <div className="filter-dropdown">
