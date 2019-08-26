@@ -39,7 +39,7 @@ class App extends React.Component {
           <div className="review-question">
             How's this gear working for you?
           </div>
-          <div className="overall-review">
+          <div className="average-rating">
             <img src="https://lululemon.ugc.bazaarvoice.com/7834redes/3_7/5/rating.gif" alt="3.7 out of 5" title="3.7 out of 5"/>
           </div>
           <div>
@@ -48,23 +48,22 @@ class App extends React.Component {
         </div>
         <div>
           <div><FiltersAndSorts /></div>
-          <div className="parent">
-            <div className="separator"></div>
-            <div className="review">
-              <div>
+          <div className="separator"></div>
+          <div>
+            <div>
+              <div className="reviews">
                 <Reviews reviews={this.state.reviews} />
               </div>
             </div>
-            <div className="review-separator"></div>
           </div>
-          <div className="review-page-links">
+          {/* <div className="review-page-links">
             <a href="#" title="1">1</a>
             <a href="#" title="2">2</a>
             <a href="#" title="3">3</a>
             <a href="#" title="4">4</a>
             <a href="#" title="5">5</a>
             <a href="#" title="next">next</a>
-          </div>
+          </div> */}
         </div>
       </div>
     );
