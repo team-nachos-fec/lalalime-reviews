@@ -12,6 +12,12 @@ class App extends React.Component {
     };
 
     this.getReviews = this.getReviews.bind(this);
+    this.handleSortClick = this.handleSortClick.bind(this);
+    this.handleRatingClick = this.handleRatingClick.bind(this);
+    this.handleAthleticClick = this.handleAthleticClick.bind(this);
+    this.handleAgeClick = this.handleAgeClick.bind(this);
+    this.handleBodyClick = this.handleBodyClick.bind(this);
+    this.filterReviewsByRating = this.filterReviewsByRating.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +33,69 @@ class App extends React.Component {
         })
       })
       .catch(err => console.error(err));
+  }
+
+  filterReviewsByRating(rating) {
+    console.log(rating);
+    axios
+      .get(`api/filter-by-rating/${rating}`, { rating })
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
+  handleSortClick(event) {
+    event.preventDefault();
+    console.log('clicked');
+    $('#sort-dropdown').toggleClass('show');
+  }
+
+  handleRatingClick(event) {
+    event.preventDefault();
+    console.log('clicked');
+    $('#rating-dropdown').addClass('show');
+
+    $(':not(#rating-dropdown)').on('click', function() {
+      console.log('elsewhere clicked')
+      $('#rating-dropdown').addClass('hide');
+      // $('#rating-dropdown').addClass('show');
+    });
+    
+    // $('body').click(function() {
+    //   $('#rating-dropdown').addClass('hide');
+    // });
+  }
+
+
+
+  handleAthleticClick(event) {
+    event.preventDefault();
+    console.log('clicked');
+    $('#athletic-dropdown').toggleClass('show');
+    // $('body').click(function() {
+    //   $('#athletic-dropdown').addClass('hide');
+    // });
+  }
+
+  handleAgeClick(event) {
+    event.preventDefault();
+    console.log('clicked');
+    $('#age-dropdown').toggleClass('show');
+    // $('body').click(function() {
+    //   $('#age-dropdown').addClass('hide');
+    // });
+  }
+
+  handleBodyClick(event) {
+    event.preventDefault();
+    console.log('clicked');
+    $('#body-dropdown').toggleClass('show');
+    // $('body').click(function() {
+    //   $('#body-dropdown').addClass('hide');
+    // });
   }
 
   render() {
@@ -54,7 +123,14 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <div><FiltersAndSorts /></div>
+          <div><FiltersAndSorts 
+          handleSortClick={this.handleSortClick} 
+          handleRatingClick={this.handleRatingClick} 
+          handleAthleticClick={this.handleAthleticClick} 
+          handleAgeClick={this.handleAgeClick} 
+          handleBodyClick={this.handleBodyClick} 
+          filterReviewsByRating={this.filterReviewsByRating}
+          /></div>
           <div className="separator"></div>
           <div>
             <div>

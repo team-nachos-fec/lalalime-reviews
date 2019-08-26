@@ -69,7 +69,6 @@ body {
 
 .create-review {
   display: inline-block;
-  /* zoom: 1; */
   background: #FFFFFF;
   border: 1px solid #938454;
   width: auto;
@@ -98,7 +97,7 @@ body {
 .filters-and-sorts {
   margin: 60px 50px 60px 50px;
   /* border: 1px solid red; */
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #F6F6F6;
   padding: 20px 20px 20px 40px;
 }
@@ -133,21 +132,29 @@ body {
   background-color: #FFFFFF;
   min-width: 160px;
   z-index: 2000;
+  border: 1px solid #CCCCCC;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .dropdown-content a {
+  font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
+  font-size: 13px;
   color: #333333;
   padding: 12px 16px;
+  text-transform: uppercase;
   text-decoration: none;
   display: block;
 }
 
 .dropdown-content a:hover {
   background-color: #E6E6E6;
-}
-
-.show {
-  display: block;
 }
 
 i {
@@ -191,7 +198,6 @@ i {
   padding-top: 45px;
   width: 20%;
   text-align: left;
-  z-index: 10;
 }
 
 .review-content {
@@ -199,7 +205,6 @@ i {
   padding-top: 50px;
   width: 70%;
   text-align: left;
-  z-index: 10;
 }
 
 .username {
