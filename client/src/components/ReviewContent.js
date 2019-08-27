@@ -6,7 +6,9 @@ class ReviewContent extends React.Component {
 
     this.state = {
       helpfulYes: this.props.review.wasThisReviewHelpfulYes,
-      helpfulNo: this.props.review.wasThisReviewHelpfulNo
+      helpfulNo: this.props.review.wasThisReviewHelpfulNo,
+      clickableLinkForYes: true,
+      clickableLinkForNo: true
     };
   
     this.handleHelpfulYesClick = this.handleHelpfulYesClick.bind(this);
@@ -21,10 +23,12 @@ class ReviewContent extends React.Component {
     if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes) {
       this.setState({
         helpfulYes: this.props.review.wasThisReviewHelpfulYes + 1,
+        clickableLinkForNo: false
       });
     } if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes + 1) {
       this.setState({
-        helpfulYes: this.props.review.wasThisReviewHelpfulYes
+        helpfulYes: this.props.review.wasThisReviewHelpfulYes,
+        clickableLinkForNo: true
       });
     }
   }
@@ -34,12 +38,13 @@ class ReviewContent extends React.Component {
     console.log('clicked');
     if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo) {
       this.setState({
-        helpfulNo: this.props.review.wasThisReviewHelpfulNo + 1
+        helpfulNo: this.props.review.wasThisReviewHelpfulNo + 1,
+        clickableLinkForYes: false
       });
-      
     } if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo + 1) {
       this.setState({
-        helpfulNo: this.props.review.wasThisReviewHelpfulNo
+        helpfulNo: this.props.review.wasThisReviewHelpfulNo,
+        clickableLinkForYes: true
       });
     }
   }
@@ -59,7 +64,24 @@ class ReviewContent extends React.Component {
     if (this.props.review.ageRange === 'i-keep-my-age-on-the-dl') {
       this.props.review.ageRange = 'i keep my age on the d.l.'
     }
-    
+
+    const clickableLinkForYes = this.state.clickableLinkForYes;
+    const clickableLinkForNo = this.state.clickableLinkForNo;
+    let yesLink;
+    let noLink;
+
+    if (clickableLinkForYes === false) {
+      yesLink = <span className="footer-answer"><a href="" title="Yes" style={{ pointerEvents: 'none' }} onClick={(event) => {this.handleHelpfulYesClick(event)}}>yes &#40; {this.state.helpfulYes} &#41;</a></span>
+    } else {
+      yesLink = <span className="footer-answer"><a href="" title="Yes" onClick={(event) => {this.handleHelpfulYesClick(event)}}>yes &#40; {this.state.helpfulYes} &#41;</a></span>
+    }
+
+    if (clickableLinkForNo === false) {
+      noLink = <span className="footer-answer"><a href="" title="No" style={{ pointerEvents: 'none' }} onClick={(event) => {this.handleHelpfulNoClick(event)}}>no &#40; {this.state.helpfulNo} &#41;</a></span>
+    } else {
+      noLink = <span className="footer-answer"><a href="" title="No" onClick={(event) => {this.handleHelpfulNoClick(event)}}>no &#40; {this.state.helpfulNo} &#41;</a></span>
+    }
+
     return (
       <div className="container">
         <div className="review-profile">
@@ -81,9 +103,9 @@ class ReviewContent extends React.Component {
           <div className="review-body">{this.props.review.reviewBody}</div>
           <div className="review-footer">
             <span className="footer-question">Was this reivew helpful to you?</span>
-            <span className="footer-answer"><a href="" title="Yes" onClick={(event) => {this.handleHelpfulYesClick(event)}}>yes &#40; {this.state.helpfulYes} &#41;</a></span>
+            {yesLink}
             {/* TODO: MAKE POPUP WHEN CLICKED */}
-            <span className="footer-answer"><a href="" title="No" onClick={(event) => {this.handleHelpfulNoClick(event)}}>no &#40; {this.state.helpfulNo} &#41;</a></span>
+            {noLink}
             {/* TODO: MAKE POPUP WHEN CLICKED */}
             <span className="footer-report"><a href="" title="Report"
             onClick={(event) => {this.handleReportLinkClick(event)}}
