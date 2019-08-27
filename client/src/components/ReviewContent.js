@@ -5,15 +5,50 @@ class ReviewContent extends React.Component {
     super(props);
 
     this.state = {
-
+      helpfulYes: this.props.review.wasThisReviewHelpfulYes,
+      helpfulNo: this.props.review.wasThisReviewHelpfulNo
     };
   
+    this.handleHelpfulYesClick = this.handleHelpfulYesClick.bind(this);
+    this.handleHelpfulNoClick = this.handleHelpfulNoClick.bind(this);
+  }
+
+  handleHelpfulYesClick(event) {
+    event.preventDefault();
+    console.log('clicked');
+    if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes) {
+      this.setState({
+        helpfulYes: this.props.review.wasThisReviewHelpfulYes + 1,
+      });
+    } if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes + 1) {
+      this.setState({
+        helpfulYes: this.props.review.wasThisReviewHelpfulYes
+      });
+    }
+  }
+
+  handleHelpfulNoClick(event) {
+    event.preventDefault();
+    console.log('clicked');
+    if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo) {
+      this.setState({
+        helpfulNo: this.props.review.wasThisReviewHelpfulNo + 1
+      });
+      
+    } if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo + 1) {
+      this.setState({
+        helpfulNo: this.props.review.wasThisReviewHelpfulNo
+      });
+    }
   }
 
   render() {
     if (this.props.review.ageRange === 'i-keep-my-age-on-the-dl') {
       this.props.review.ageRange = 'i keep my age on the d.l.'
     }
+
+
+
     
     return (
       <div className="container">
@@ -36,10 +71,10 @@ class ReviewContent extends React.Component {
           <div className="review-body">{this.props.review.reviewBody}</div>
           <div className="review-footer">
             <span className="footer-question">Was this reivew helpful to you?</span>
-            <span className="footer-answer"><a href="" title="Yes" >yes &#40; {this.props.review.wasThisReviewHelpfulYes} &#41;</a></span>
+            <span className="footer-answer"><a href="" title="Yes" onClick={(event) => {this.handleHelpfulYesClick(event)}}>yes &#40; {this.state.helpfulYes} &#41;</a></span>
             {/* TODO: MAKE POPUP WHEN CLICKED */}
             {/* TODO: CONDITIALLY RENDER NUMBER TO INCREASE OR DECREASE WHEN CLICKED */}
-            <span className="footer-answer"><a href="" title="No">no &#40; {this.props.review.wasThisReviewHelpfulNo} &#41;</a></span>
+            <span className="footer-answer"><a href="" title="No" onClick={(event) => {this.handleHelpfulNoClick(event)}}>no &#40; {this.state.helpfulNo} &#41;</a></span>
             {/* TODO: MAKE POPUP WHEN CLICKED */}
             {/* TODO: CONDITIALLY RENDER NUMBER TO INCREASE OR DECREASE WHEN CLICKED */}
             <span className="footer-report"><a href="" title="Report">report as inappropriate</a></span>
