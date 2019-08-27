@@ -11,6 +11,7 @@ class App extends React.Component {
       reviews: []
     };
 
+    // this.getReviews = this.getReviews.bind(this);
     this.handleSortClick = this.handleSortClick.bind(this);
     this.handleRatingClick = this.handleRatingClick.bind(this);
     this.handleAthleticClick = this.handleAthleticClick.bind(this);
@@ -23,12 +24,24 @@ class App extends React.Component {
     this.sortByFeatured = this.sortByFeatured.bind(this);
     this.sortByDate = this.sortByDate.bind(this);
     this.sortByRatingDescending = this.sortByRatingDescending.bind(this);
-    this.sortByRatingAscending = this.sortByRatingAscending.bind(this);
+    this.sortByRatingDescending = this.sortByRatingDescending.bind(this);
   }
 
   componentDidMount() {
+    // this.getReviews();
     this.sortByDate();
   }
+
+  // getReviews() {
+  //   axios
+  //     .get('/api/')
+  //     .then((reviews) => {
+  //       this.setState({
+  //         reviews: reviews.data
+  //       })
+  //     })
+  //     .catch(err => console.error(err));
+  // }
 
   filterReviewsByRating(rating) {
     axios
@@ -183,12 +196,14 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log(this.state.reviews);
     let sum = 0;
     for (var i = 0; i < this.state.reviews.length; i++) {
       sum += this.state.reviews[i].rating;
     }
     let average = sum / this.state.reviews.length;
     let averageString = average.toString().split('.').join('_');
+    
 
     return (
       <div>
@@ -208,6 +223,7 @@ class App extends React.Component {
         </div>
         <div>
           <div><FiltersAndSorts 
+          reviews={this.state.reviews}
           handleSortClick={this.handleSortClick} 
           handleRatingClick={this.handleRatingClick} 
           handleAthleticClick={this.handleAthleticClick} 
