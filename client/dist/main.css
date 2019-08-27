@@ -310,6 +310,40 @@ i {
   text-transform: uppercase;
 }
 
+#thank-you-popup {
+  display: none;
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 5px 10px 5px rgba(188,188,188,0.75);
+  -moz-box-shadow: 0px 5px 10px 5px rgba(188,188,188,0.75);
+  box-shadow: 0px 5px 10px 5px rgba(188,188,188,0.75);
+}
+
+#popup-text {
+  font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
+  font-weight: 100;
+  color: #666666;
+  font-size: 15px;
+  /* border: 1px solid red; */
+  margin-top: 5px;
+  width: 75%;
+  float: left;
+}
+
+#popup-close-button {
+  text-decoration: none;
+  color:  #666666;
+  float: right;
+  margin-top: 10px;
+  position: relative;
+  top: -10px;
+  /* border: 1px solid red; */
+}
+
 .footer-report a {
   padding: 0 10px;
   margin-left: 5px;

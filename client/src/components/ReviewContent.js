@@ -11,21 +11,34 @@ class ReviewContent extends React.Component {
       clickableLinkForNo: true
     };
   
-    this.handleHelpfulYesClick = this.handleHelpfulYesClick.bind(this);
-    this.handleHelpfulNoClick = this.handleHelpfulNoClick.bind(this);
     this.handleReportButtonClick = this.handleReportButtonClick.bind(this);
     this.handleReportLinkClick = this.handleReportLinkClick.bind(this);
+    this.handleHelpfulYesClick = this.handleHelpfulYesClick.bind(this);
+    this.handleHelpfulNoClick = this.handleHelpfulNoClick.bind(this);
+    this.handleHelpfulCloseClick = this.handleHelpfulCloseClick.bind(this);
+  }
+  
+  handleReportLinkClick(event) {
+    event.preventDefault();
+    $('#report-popup').show();
+  }
+
+  handleReportButtonClick(event) {
+    event.preventDefault();
+    $('#report-popup').hide();
   }
 
   handleHelpfulYesClick(event) {
     event.preventDefault();
-    console.log('clicked');
     if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes) {
+      console.log('increment');
+      $('#thank-you-popup').show();
       this.setState({
         helpfulYes: this.props.review.wasThisReviewHelpfulYes + 1,
         clickableLinkForNo: false
       });
     } if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes + 1) {
+      console.log('decrement');
       this.setState({
         helpfulYes: this.props.review.wasThisReviewHelpfulYes,
         clickableLinkForNo: true
@@ -35,8 +48,8 @@ class ReviewContent extends React.Component {
 
   handleHelpfulNoClick(event) {
     event.preventDefault();
-    console.log('clicked');
     if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo) {
+      $('#thank-you-popup').show();
       this.setState({
         helpfulNo: this.props.review.wasThisReviewHelpfulNo + 1,
         clickableLinkForYes: false
@@ -49,15 +62,9 @@ class ReviewContent extends React.Component {
     }
   }
 
-  handleReportLinkClick(event) {
+  handleHelpfulCloseClick(event) {
     event.preventDefault();
-    console.log('clicked');
-    $('#report-popup').show();
-  }
-
-  handleReportButtonClick(event) {
-    event.preventDefault();
-    $('#report-popup').hide();
+    $('#thank-you-popup').hide();
   }
 
   render() {
@@ -73,7 +80,7 @@ class ReviewContent extends React.Component {
     if (clickableLinkForYes === false) {
       yesLink = <span className="footer-answer"><a href="" title="Yes" style={{ pointerEvents: 'none' }} onClick={(event) => {this.handleHelpfulYesClick(event)}}>yes &#40; {this.state.helpfulYes} &#41;</a></span>
     } else {
-      yesLink = <span className="footer-answer"><a href="" title="Yes" onClick={(event) => {this.handleHelpfulYesClick(event)}}>yes &#40; {this.state.helpfulYes} &#41;</a></span>
+      yesLink = <span className="footer-answer"><a href="" title="Yes" onClick={(event) => {this.handleHelpfulYesClick(event)}} >yes &#40; {this.state.helpfulYes} &#41;</a></span>
     }
 
     if (clickableLinkForNo === false) {
@@ -104,9 +111,7 @@ class ReviewContent extends React.Component {
           <div className="review-footer">
             <span className="footer-question">Was this reivew helpful to you?</span>
             {yesLink}
-            {/* TODO: MAKE POPUP WHEN CLICKED */}
             {noLink}
-            {/* TODO: MAKE POPUP WHEN CLICKED */}
             <span className="footer-report"><a href="" title="Report"
             onClick={(event) => {this.handleReportLinkClick(event)}}
             >report as inappropriate</a></span>
@@ -123,8 +128,12 @@ class ReviewContent extends React.Component {
                   onClick={(event) => {this.handleReportButtonClick(event)}} />
                 </div>
               </form>
-            </div>
           </div>
+            </div>
+            <div id="thank-you-popup">
+            <span id="popup-text">Thank you! You have successfully submitted feedback for this review.</span>
+            <a href="" title="Close" id="popup-close-button" onClick={(event) => {this.handleHelpfulCloseClick(event)}}>&#x2715;</a>
+            </div>
         </div>
       </div>
     )
