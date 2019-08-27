@@ -93,6 +93,37 @@ class FiltersAndSorts extends React.Component {
         eighthAgeCount++;
       }
     }
+
+    let athleticCount = 0;
+    let curvyCount = 0;
+    let leanCount = 0;
+    let muscularCount = 0;
+    let petiteCount = 0;
+    let slimCount = 0;
+    let solidCount = 0;
+    for (let i = 0; i < reviews.length; i++) {
+      if (reviews[i].bodyType === 'athletic') {
+        athleticCount++;
+      }
+      if (reviews[i].bodyType === 'curvy') {
+        curvyCount++;
+      }
+      if (reviews[i].bodyType === 'lean') {
+        leanCount++;
+      }
+      if (reviews[i].bodyType === 'muscular') {
+        muscularCount++;
+      }
+      if (reviews[i].bodyType === 'petite') {
+        petiteCount++;
+      }
+      if (reviews[i].bodyType === 'slim') {
+        slimCount++;
+      }
+      if (reviews[i].bodyType === 'solid') {
+        solidCount++;
+      }
+    }
     
     return (
       <div>
@@ -133,13 +164,13 @@ class FiltersAndSorts extends React.Component {
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleBodyClick(event)}} className="dropbtn" title="See more 'body type' filters">body type<i className="fa fa-caret-down"></i></button>
             <span id="body-dropdown" className="dropdown-content">
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('athletic')}}>athletic &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('curvy')}}>curvy &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('lean')}}>lean &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('muscular')}}>muscular &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('petite')}}>petite &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('slim')}}>slim &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('solid')}}>solid &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('athletic')}}>athletic &#40;{athleticCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('curvy')}}>curvy &#40;{curvyCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('lean')}}>lean &#40;{leanCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('muscular')}}>muscular &#40;{muscularCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('petite')}}>petite &#40;{petiteCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('slim')}}>slim &#40;{slimCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('solid')}}>solid &#40;{solidCount}&#41;</a>
             </span>
           </div>
           <div className="sort-dropdown">
