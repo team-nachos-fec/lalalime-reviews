@@ -11,6 +11,8 @@ class ReviewContent extends React.Component {
   
     this.handleHelpfulYesClick = this.handleHelpfulYesClick.bind(this);
     this.handleHelpfulNoClick = this.handleHelpfulNoClick.bind(this);
+    this.handleReportButtonClick = this.handleReportButtonClick.bind(this);
+    this.handleReportLinkClick = this.handleReportLinkClick.bind(this);
   }
 
   handleHelpfulYesClick(event) {
@@ -42,13 +44,21 @@ class ReviewContent extends React.Component {
     }
   }
 
+  handleReportLinkClick(event) {
+    event.preventDefault();
+    console.log('clicked');
+    $('#report-popup').show();
+  }
+
+  handleReportButtonClick(event) {
+    event.preventDefault();
+    $('#report-popup').hide();
+  }
+
   render() {
     if (this.props.review.ageRange === 'i-keep-my-age-on-the-dl') {
       this.props.review.ageRange = 'i keep my age on the d.l.'
     }
-
-
-
     
     return (
       <div className="container">
@@ -73,12 +83,25 @@ class ReviewContent extends React.Component {
             <span className="footer-question">Was this reivew helpful to you?</span>
             <span className="footer-answer"><a href="" title="Yes" onClick={(event) => {this.handleHelpfulYesClick(event)}}>yes &#40; {this.state.helpfulYes} &#41;</a></span>
             {/* TODO: MAKE POPUP WHEN CLICKED */}
-            {/* TODO: CONDITIALLY RENDER NUMBER TO INCREASE OR DECREASE WHEN CLICKED */}
             <span className="footer-answer"><a href="" title="No" onClick={(event) => {this.handleHelpfulNoClick(event)}}>no &#40; {this.state.helpfulNo} &#41;</a></span>
             {/* TODO: MAKE POPUP WHEN CLICKED */}
-            {/* TODO: CONDITIALLY RENDER NUMBER TO INCREASE OR DECREASE WHEN CLICKED */}
-            <span className="footer-report"><a href="" title="Report">report as inappropriate</a></span>
-            {/* TODO: MAKE POPUP WHEN CLICKED */}
+            <span className="footer-report"><a href="" title="Report"
+            onClick={(event) => {this.handleReportLinkClick(event)}}
+            >report as inappropriate</a></span>
+            <div id="report-popup">
+              <span>describe the issue</span>
+              <form>
+                <div className="report-form">
+                  <textarea type="text" name="name" id="name" required></textarea>
+                </div>
+                <div className="report-form-btns">
+                  <input className="submit-btn" type="submit" value="Submit" 
+                  onClick={(event) => {this.handleReportButtonClick(event)}} />
+                  <input className="cancel-btn" type="submit" value="Cancel" 
+                  onClick={(event) => {this.handleReportButtonClick(event)}} />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
