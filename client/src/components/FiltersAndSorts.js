@@ -42,20 +42,55 @@ class FiltersAndSorts extends React.Component {
     let cyclistCount = 0;
     let sweatyCount = 0;
     for (let i = 0; i < reviews.length; i++) {
-      if (reviews[i].rating === 1) {
+      if (reviews[i].athleticType === 'yogi') {
         yogiCount++;
       }
-      if (reviews[i].rating === 2) {
+      if (reviews[i].athleticType === 'runner') {
         runnerCount++;
       }
-      if (reviews[i].rating === 3) {
+      if (reviews[i].athleticType === 'dancer') {
         dancerCount++;
       }
-      if (reviews[i].rating === 4) {
+      if (reviews[i].athleticType === 'cyclist') {
         cyclistCount++;
       }
-      if (reviews[i].rating === 5) {
+      if (reviews[i].athleticType === 'sweaty-generalist') {
         sweatyCount++;
+      }
+    }
+
+    let firstAgeCount = 0;
+    let secondAgeCount = 0;
+    let thirdAgeCount = 0;
+    let fourthAgeCount = 0;
+    let fifthAgeCount = 0;
+    let sixthAgeCount = 0;
+    let seventhAgeCount = 0;
+    let eighthAgeCount = 0;
+    for (let i = 0; i < reviews.length; i++) {
+      if (reviews[i].ageRange === 'under-18') {
+        firstAgeCount++;
+      }
+      if (reviews[i].ageRange === '18-24') {
+        secondAgeCount++;
+      }
+      if (reviews[i].ageRange === '25-34') {
+        thirdAgeCount++;
+      }
+      if (reviews[i].ageRange === '35-44') {
+        fourthAgeCount++;
+      }
+      if (reviews[i].ageRange === '45-54') {
+        fifthAgeCount++;
+      }
+      if (reviews[i].ageRange === '55-65') {
+        sixthAgeCount++;
+      }
+      if (reviews[i].ageRange === 'over-65') {
+        seventhAgeCount++;
+      }
+      if (reviews[i].ageRange === 'i-keep-my-age-on-the-dl') {
+        eighthAgeCount++;
       }
     }
     
@@ -85,14 +120,14 @@ class FiltersAndSorts extends React.Component {
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleAgeClick(event)}} className="dropbtn" title="See more 'age' filters">age<i className="fa fa-caret-down"></i></button>
             <span id="age-dropdown" className="dropdown-content">
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('under-18')}}>under 18 &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('18-24')}}>18-24 &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('25-34')}}>25-34 &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('35-44')}}>35-44 &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('45-54')}}>45-54 &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('55-65')}}>55-65 &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('over-65')}}>over 65 &#40;0&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('i-keep-my-age-on-the-dl')}}>i keep my age on the d.l. &#40;0&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('under-18')}}>under 18 &#40;{firstAgeCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('18-24')}}>18-24 &#40;{secondAgeCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('25-34')}}>25-34 &#40;{thirdAgeCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('35-44')}}>35-44 &#40;{fourthAgeCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('45-54')}}>45-54 &#40;{fifthAgeCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('55-65')}}>55-65 &#40;{sixthAgeCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('over-65')}}>over 65 &#40;{seventhAgeCount}&#41;</a>
+              <a href="#" onClick={()=> {this.props.filterReviewsByAge('i-keep-my-age-on-the-dl')}}>i keep my age on the d.l. &#40;{eighthAgeCount}&#41;</a>
             </span>
           </div>
           <div className="filter-dropdown">
