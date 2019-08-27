@@ -305,8 +305,9 @@ i {
 }
 
 .footer-answer a {
-  padding: 0 10px;
+  padding: 0 20px 0 10px;
   border-right: 1px solid #938454;
+  margin: 0 5px;
   text-decoration: none;
   font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
   color: #938454;
@@ -319,6 +320,7 @@ i {
 
 .footer-report a {
   padding: 0 10px;
+  margin-left: 5px;
   text-decoration: none;
   font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
   color: #938454;
