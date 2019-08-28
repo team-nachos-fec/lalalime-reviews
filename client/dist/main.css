@@ -307,7 +307,7 @@ i {
 /*------------ Review User Popup Styles ------------*/
 
 .user-popup {
-  display: none;
+  display: block;
   background: #FFFFFF;
   position: absolute;
   z-index: 100;
@@ -485,7 +485,7 @@ i {
 /*------------ Thank You Popup Styles ------------*/
 
 #thank-you-popup {
-  display: none;
+  display: block;
   margin-left: 50px;
   padding: 10px;
   border-radius: 10px;
@@ -517,8 +517,8 @@ i {
 
 /*------------ Report Popup Styles ------------*/
 
-#report-popup {
-  display: none;
+.report-popup {
+  display: block;
   float: right;
   margin-top: 20px;
   padding: 15px;
