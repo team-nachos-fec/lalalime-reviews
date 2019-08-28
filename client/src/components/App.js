@@ -24,6 +24,7 @@ class App extends React.Component {
     this.sortByDate = this.sortByDate.bind(this);
     this.sortByRatingDescending = this.sortByRatingDescending.bind(this);
     this.sortByRatingAscending = this.sortByRatingAscending.bind(this);
+    this.handleRemoveFiltersClick = this.handleRemoveFiltersClick.bind(this);
   }
 
   componentDidMount() {
@@ -31,6 +32,7 @@ class App extends React.Component {
   }
 
   filterReviewsByRating(rating) {
+    $('#filter-popin').show();
     axios
       .get(`/api/filter-by-rating/${rating}`)
       .then((reviews) => {
@@ -42,6 +44,7 @@ class App extends React.Component {
   }
 
   filterReviewsByAthleticType(athleticType) {
+    $('#filter-popin').show();
     axios
       .get(`/api/filter-by-athletic-type/${athleticType}`)
       .then((reviews) => {
@@ -53,6 +56,7 @@ class App extends React.Component {
   }
 
   filterReviewsByAge(ageRange) {
+    $('#filter-popin').show();
     axios
       .get(`/api/filter-by-age-range/${ageRange}`)
       .then((reviews) => {
@@ -64,6 +68,7 @@ class App extends React.Component {
   }
 
   filterReviewsByBodyType(bodyType) {
+    $('#filter-popin').show();
     axios
       .get(`/api/filter-by-body-type/${bodyType}`)
       .then((reviews) => {
@@ -203,6 +208,12 @@ class App extends React.Component {
     }
   }
 
+  handleRemoveFiltersClick(event) {
+    event.preventDefault();
+    this.sortByDate();
+    $('#filter-popin').hide()
+  }
+
   render() {
     let sum = 0;
     for (var i = 0; i < this.state.reviews.length; i++) {
@@ -244,7 +255,13 @@ class App extends React.Component {
           sortByDate={this.sortByDate}
           sortByRatingDescending={this.sortByRatingDescending}
           sortByRatingAscending={this.sortByRatingAscending}
-          /></div>
+          />
+          </div>
+          <div id="filter-popin">
+            {/* <div>{`Show me  reviews with `}</div> 
+            <div><span>filter type</span><span>filter item</span></div> */}
+            <div><a href="" onClick={(event) => {this.handleRemoveFiltersClick(event)}}>&#x2715; remove all filters</a></div>
+          </div>
           <div className="separator"></div>
           <div>
             <div>
