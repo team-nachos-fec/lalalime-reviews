@@ -22,29 +22,29 @@ class ReviewContent extends React.Component {
   
   handleUsernameEnter(event) {
     event.preventDefault();
-    $('#user-popup').show();
+    $('#user-popup').fadeIn(500);
   }
 
   handleUsernameLeave(event) {
     event.preventDefault();
-    $('#user-popup').hide();
+    $('#user-popup').fadeOut(500);
   }
 
   handleReportLinkClick(event) {
     event.preventDefault();
-    $('#report-popup').show();
+    $('#report-popup').fadeIn(500);
   }
 
   handleReportButtonClick(event) {
     event.preventDefault();
-    $('#report-popup').hide();
+    $('#report-popup').fadeOut(500);
   }
 
   handleHelpfulYesClick(event) {
     event.preventDefault();
     if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes) {
       console.log('increment');
-      $('#thank-you-popup').show();
+      $('#thank-you-popup').fadeIn(500);
       this.setState({
         helpfulYes: this.props.review.wasThisReviewHelpfulYes + 1,
         clickableLinkForNo: false
@@ -61,7 +61,7 @@ class ReviewContent extends React.Component {
   handleHelpfulNoClick(event) {
     event.preventDefault();
     if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo) {
-      $('#thank-you-popup').show();
+      $('#thank-you-popup').fadeIn(500);
       this.setState({
         helpfulNo: this.props.review.wasThisReviewHelpfulNo + 1,
         clickableLinkForYes: false
@@ -76,7 +76,7 @@ class ReviewContent extends React.Component {
 
   handleHelpfulCloseClick(event) {
     event.preventDefault();
-    $('#thank-you-popup').hide();
+    $('#thank-you-popup').fadeOut(500);
   }
 
   render() {
