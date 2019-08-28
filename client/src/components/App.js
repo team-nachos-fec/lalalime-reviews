@@ -83,10 +83,38 @@ class App extends React.Component {
     axios
       .get(`/api/filter-by-athletic-type/${athleticType}`)
       .then((reviews) => {
-        this.setState({
-          reviews: reviews.data,
-          filter: 'athletic type'
-        })
+        if (athleticType === 'yogi') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'athletic type',
+            athleticType: 'yogi'
+          });
+        } else if (athleticType === 'runner') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'athletic type',
+            athleticType: 'runner'
+          });
+        } else if (athleticType === 'dancer') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'athletic type',
+            athleticType: 'dancer'
+          });
+        } else if (athleticType === 'cyclist') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'athletic type',
+            athleticType: 'cyclist'
+          });
+        } else {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'athletic type',
+            athleticType: 'sweaty generalist'
+          });
+        }
+        
       })
       .catch(err => console.error(err));
   }
