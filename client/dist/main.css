@@ -69,11 +69,11 @@ body {
 }
 
 #filtered-rating-disclaimer {
+  display: none;
   color: #999999;
   font-size: 14px;
   line-height: 1.5;
   font-style: italic;
-  display: block;
   margin-bottom: 5px;
 }
 
