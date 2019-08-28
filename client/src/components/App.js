@@ -33,6 +33,7 @@ class App extends React.Component {
 
   filterReviewsByRating(rating) {
     $('#filter-popin').show();
+    $('#filtered-rating-disclaimer').show();
     axios
       .get(`/api/filter-by-rating/${rating}`)
       .then((reviews) => {
@@ -45,6 +46,7 @@ class App extends React.Component {
 
   filterReviewsByAthleticType(athleticType) {
     $('#filter-popin').show();
+    $('#filtered-rating-disclaimer').show();
     axios
       .get(`/api/filter-by-athletic-type/${athleticType}`)
       .then((reviews) => {
@@ -57,6 +59,7 @@ class App extends React.Component {
 
   filterReviewsByAge(ageRange) {
     $('#filter-popin').show();
+    $('#filtered-rating-disclaimer').show();
     axios
       .get(`/api/filter-by-age-range/${ageRange}`)
       .then((reviews) => {
@@ -69,6 +72,7 @@ class App extends React.Component {
 
   filterReviewsByBodyType(bodyType) {
     $('#filter-popin').show();
+    $('#filtered-rating-disclaimer').show();
     axios
       .get(`/api/filter-by-body-type/${bodyType}`)
       .then((reviews) => {
@@ -212,6 +216,7 @@ class App extends React.Component {
     event.preventDefault();
     this.sortByDate();
     $('#filter-popin').hide()
+    $('#filtered-rating-disclaimer').hide();
   }
 
   render() {
@@ -231,6 +236,7 @@ class App extends React.Component {
           <div className="review-question">
             How's this gear working for you?
           </div>
+          <div id="filtered-rating-disclaimer">&#40;based on current filters&#41;</div>
           <div className="average-rating">
             <img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${averageString}/5/rating.gif`} alt={`${average} out of 5`} title={`${average} out of 5`}/>
           </div>
