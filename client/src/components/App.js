@@ -9,7 +9,11 @@ class App extends React.Component {
 
     this.state = {
       reviews: [],
-      filter: ''
+      filter: '',
+      rating: '',
+      athleticType: '',
+      age: '',
+      bodyType: ''
     };
 
     this.handleSortClick = this.handleSortClick.bind(this);
@@ -38,10 +42,37 @@ class App extends React.Component {
     axios
       .get(`/api/filter-by-rating/${rating}`)
       .then((reviews) => {
-        this.setState({
-          reviews: reviews.data,
-          filter: 'rating'
-        }, () => console.log(reviews.data));
+        if (rating === 1) {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'rating',
+            rating: '1 star'
+          });
+        } else if (rating === 2) {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'rating',
+            rating: '2 stars'
+          });
+        } else if (rating === 3) {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'rating',
+            rating: '3 stars'
+          });
+        } else if (rating === 4) {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'rating',
+            rating: '4 stars'
+          });
+        } else {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'rating',
+            rating: '5 stars'
+          });
+        }
       })
       .catch(err => console.error(err));
   }
@@ -234,6 +265,17 @@ class App extends React.Component {
 
     let reviewNumber = this.state.reviews.length;
     let filter = this.state.filter;
+    let filterCriteria;
+
+    if (filter === 'rating') {
+      filterCriteria = this.state.rating;
+    } else if (filter === 'athletic type') {
+      filterCriteria = this.state.athleticType;
+    } else if (filter === 'age') {
+      filterCriteria = this.state.age;
+    } else {
+      filterCriteria = this.state.bodyType;
+    }
 
     return (
       <div>
@@ -277,7 +319,7 @@ class App extends React.Component {
               <span id="filter-type">{filter}</span>
               <span>
                 <a href=""onClick={(event) => {this.handleRemoveFiltersClick(event)}}>
-                <span id="filter-criteria">18-24</span><span id="filter-number">{`(${reviewNumber})`}</span>
+                <span id="filter-criteria">{filterCriteria}</span><span id="filter-number">{`(${reviewNumber})`}</span>
                 </a>
               </span>
             </div>
