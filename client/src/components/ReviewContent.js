@@ -22,12 +22,12 @@ class ReviewContent extends React.Component {
   
   handleUsernameEnter(event) {
     event.preventDefault();
-    $('#user-popup').fadeIn(500);
+    $('.user-popup').fadeIn(500);
   }
 
   handleUsernameLeave(event) {
     event.preventDefault();
-    $('#user-popup').fadeOut(500);
+    $('.user-popup').fadeOut(500);
   }
 
   handleReportLinkClick(event) {
@@ -43,14 +43,12 @@ class ReviewContent extends React.Component {
   handleHelpfulYesClick(event) {
     event.preventDefault();
     if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes) {
-      console.log('increment');
       $('#thank-you-popup').fadeIn(500);
       this.setState({
         helpfulYes: this.props.review.wasThisReviewHelpfulYes + 1,
         clickableLinkForNo: false
       });
     } if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes + 1) {
-      console.log('decrement');
       this.setState({
         helpfulYes: this.props.review.wasThisReviewHelpfulYes,
         clickableLinkForNo: true
@@ -106,7 +104,7 @@ class ReviewContent extends React.Component {
         <div className="review-profile">
           <div className="rating"><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${this.props.review.rating}_0/5/rating.gif`} alt={`${this.props.review.rating} out of 5`} title={`${this.props.review.rating} out of 5`}/></div>
           <a href="" className="username" onMouseEnter={(event) => {this.handleUsernameEnter(event)}}>{this.props.review.username}</a>
-          <div id="user-popup" onMouseLeave={(event) => {this.handleUsernameLeave(event)}}>
+          <div className="user-popup" onMouseLeave={(event) => {this.handleUsernameLeave(event)}}>
             <div id="popup-username"><a href="" className="username" title={`See ${this.props.review.username}'s full profile`}>{this.props.review.username}</a></div>
             <div id="popup-active-date">Active since: {this.props.review.activeSinceDate}</div>
             <div id="also-reviewed-text">I also reviewed</div>

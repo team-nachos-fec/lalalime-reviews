@@ -306,7 +306,7 @@ i {
 
 /*------------ Review User Popup Styles ------------*/
 
-#user-popup {
+.user-popup {
   display: none;
   background: #FFFFFF;
   position: absolute;
