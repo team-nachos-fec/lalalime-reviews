@@ -183,10 +183,49 @@ class App extends React.Component {
     axios
       .get(`/api/filter-by-body-type/${bodyType}`)
       .then((reviews) => {
-        this.setState({
-          reviews: reviews.data,
-          filter: 'body type'
-        })
+        if (bodyType === 'athletic') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'body type',
+            bodyType: 'athletic'
+          });
+        } else if (bodyType === 'curvy') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'body type',
+            bodyType: 'curvy'
+          });
+        } else if (bodyType === 'lean') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'body type',
+            bodyType: 'lean'
+          });
+        } else if (bodyType === 'muscular') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'body type',
+            bodyType: 'muscular'
+          });
+        } else if (bodyType === 'petite') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'body type',
+            bodyType: 'petite'
+          });
+        } else if (bodyType === 'slim') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'body type',
+            bodyType: 'slim'
+          });
+        } else {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'body type',
+            bodyType: 'solid'
+          });
+        }
       })
       .catch(err => console.error(err));
   }
