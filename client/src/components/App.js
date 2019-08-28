@@ -211,13 +211,6 @@ class App extends React.Component {
     let average = sum / this.state.reviews.length;
     let averageString = average.toString().split('.').join('_');
 
-    const clicked = this.state.clicked;
-    let pageLink;
-    if (clicked) {
-
-    }
-    
-
     return (
       <div>
         <div className="review-header">
