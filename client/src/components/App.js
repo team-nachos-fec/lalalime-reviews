@@ -11,7 +11,6 @@ class App extends React.Component {
       reviews: []
     };
 
-    // this.getReviews = this.getReviews.bind(this);
     this.handleSortClick = this.handleSortClick.bind(this);
     this.handleRatingClick = this.handleRatingClick.bind(this);
     this.handleAthleticClick = this.handleAthleticClick.bind(this);
@@ -121,76 +120,102 @@ class App extends React.Component {
 
   handleSortClick(event) {
     event.preventDefault();
-    console.log('clicked');
-    // $('#sort-dropdown').addClass('show');
     $('#sort-dropdown').toggleClass('show');
-    // $(':not(#sort-dropdown)').on('click', function() {
-    //   console.log('elsewhere clicked')
-    //   $('#sort-dropdown').addClass('hide');
-    //   // $('#rating-dropdown').addClass('show');
-    // });
+    window.onclick = function(event) {
+      if (!event.target.matches('#sort-dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
   }
 
   handleRatingClick(event) {
     event.preventDefault();
-    console.log('clicked');
-    $('#rating-dropdown').addClass('show');
-
-    $(':not(#rating-dropdown)').on('click', function() {
-      console.log('elsewhere clicked')
-      $('#rating-dropdown').addClass('hide');
-      // $('#rating-dropdown').addClass('show');
-    });
-    
-    // $('body').click(function() {
-    //   $('#rating-dropdown').addClass('hide');
-    // });
+    $('#rating-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('#rating-dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
   }
 
   handleAthleticClick(event) {
     event.preventDefault();
-    console.log('clicked');
-    $('#athletic-dropdown').addClass('show');
-
-    $(':not(#athletic-dropdown)').on('click', function() {
-      console.log('elsewhere clicked')
-      $('#athletic-dropdown').addClass('hide');
-      // $('#rating-dropdown').addClass('show');
-    });
+    $('#athletic-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('#athletic-dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
   }
 
   handleAgeClick(event) {
     event.preventDefault();
-    console.log('clicked');
-    $('#age-dropdown').addClass('show');
-
-    $(':not(#age-dropdown)').on('click', function() {
-      console.log('elsewhere clicked')
-      $('#age-dropdown').addClass('hide');
-      // $('#rating-dropdown').addClass('show');
-    });
+    $('#age-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('#age-dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
   }
 
   handleBodyClick(event) {
     event.preventDefault();
-    console.log('clicked');
-    $('#body-dropdown').addClass('show');
-
-    $(':not(#body-dropdown)').on('click', function() {
-      console.log('elsewhere clicked')
-      $('#body-dropdown').addClass('hide');
-      // $('#rating-dropdown').addClass('show');
-    });
+    $('#body-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('#body-dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
   }
 
   render() {
-    // console.log(this.state.reviews);
     let sum = 0;
     for (var i = 0; i < this.state.reviews.length; i++) {
       sum += this.state.reviews[i].rating;
     }
     let average = sum / this.state.reviews.length;
     let averageString = average.toString().split('.').join('_');
+
+    const clicked = this.state.clicked;
+    let pageLink;
+    if (clicked) {
+
+    }
     
 
     return (
@@ -210,7 +235,8 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <div><FiltersAndSorts 
+          <div><FiltersAndSorts
+          handleElsewhereButSortClick={this.handleElsewhereButSortClick}
           reviews={this.state.reviews}
           handleSortClick={this.handleSortClick} 
           handleRatingClick={this.handleRatingClick} 
@@ -235,7 +261,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="review-page-links">
-            <a href="#" title="1">1</a>
+            <a href="#" title="1" id="highlighted">1</a>
             <a href="#" title="2">2</a>
             <a href="#" title="3">3</a>
             <a href="#" title="4">4</a>
