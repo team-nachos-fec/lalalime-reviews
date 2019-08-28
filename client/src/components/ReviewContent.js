@@ -11,6 +11,8 @@ class ReviewContent extends React.Component {
       clickableLinkForNo: true
     };
   
+    this.handleUsernameEnter = this.handleUsernameEnter.bind(this);
+    this.handleUsernameLeave = this.handleUsernameLeave.bind(this);
     this.handleReportButtonClick = this.handleReportButtonClick.bind(this);
     this.handleReportLinkClick = this.handleReportLinkClick.bind(this);
     this.handleHelpfulYesClick = this.handleHelpfulYesClick.bind(this);
@@ -18,6 +20,16 @@ class ReviewContent extends React.Component {
     this.handleHelpfulCloseClick = this.handleHelpfulCloseClick.bind(this);
   }
   
+  handleUsernameEnter(event) {
+    event.preventDefault();
+    $('#user-popup').show();
+  }
+
+  handleUsernameLeave(event) {
+    event.preventDefault();
+    $('#user-popup').hide();
+  }
+
   handleReportLinkClick(event) {
     event.preventDefault();
     $('#report-popup').show();
@@ -93,8 +105,32 @@ class ReviewContent extends React.Component {
       <div className="container">
         <div className="review-profile">
           <div className="rating"><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${this.props.review.rating}_0/5/rating.gif`} alt={`${this.props.review.rating} out of 5`} title={`${this.props.review.rating} out of 5`}/></div>
-          <div className="username">{this.props.review.username}</div>
-          {/* TODO: MAKE POPUP WHEN HOVERED OVER */}
+          <a href="" className="username" onMouseEnter={(event) => {this.handleUsernameEnter(event)}}>{this.props.review.username}</a>
+          <div id="user-popup" onMouseLeave={(event) => {this.handleUsernameLeave(event)}}>
+            <div id="popup-username"><a href="" className="username" title={`See ${this.props.review.username}'s full profile`}>{this.props.review.username}</a></div>
+            <div id="popup-active-date">Active since: {this.props.review.activeSinceDate}</div>
+            <div id="also-reviewed-text">I also reviewed</div>
+            <div id="first-rating">
+              <span><a href="" title="Scuba Pullover">Scuba Pullover</a></span>
+              <span><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${this.props.review.rating}_0/5/rating.gif`} alt={`${this.props.review.rating} out of 5`} title={`${this.props.review.rating} out of 5`}/></span>
+            </div>
+            <div id="rating-container">
+              <div id="second-rating">
+                <span id="text">&#40;Unknown&#41;</span>
+                <span><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/3_0/5/rating.gif`} alt={`3 out of 5`} title={`3 out of 5`}/></span>
+              </div>
+            </div>
+            <div id="helpfulness-votes">
+              <span id="helpfulness-text">Helpfulness Votes</span>
+              <span><img src={'https://i.imgur.com/GsRixgl.png'}/></span>
+              <span className="helpfulness-number">{this.props.review.helpfulnessVotesThumbsUp}</span>
+              <span><img src={'https://i.imgur.com/fWCf4UL.png'}/></span>
+              <span className="helpfulness-number">{this.props.review.helpfulnessVotesThumbsDown}</span>
+            </div>
+            <div id="full-profile-link">
+              <span><a href="" title={`See ${this.props.review.username}'s full profile`}>See full profile</a></span>
+            </div>
+          </div>
           <div className="user-properties">
             <div className="user-property"><span className="lighter">location: </span><span className="bolder">{this.props.review.location.toUpperCase()}</span></div>
             <div className="user-property"><span className="lighter">athletic type: </span><span className="bolder">{this.props.review.athleticType.toUpperCase()}</span></div>
@@ -119,7 +155,7 @@ class ReviewContent extends React.Component {
               <span>describe the issue</span>
               <form>
                 <div className="report-form">
-                  <textarea type="text" name="name" id="name" required></textarea>
+                  <textarea type="text"></textarea>
                 </div>
                 <div className="report-form-btns">
                   <input className="submit-btn" type="submit" value="Submit" 
