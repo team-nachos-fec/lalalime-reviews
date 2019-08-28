@@ -114,7 +114,6 @@ class App extends React.Component {
             athleticType: 'sweaty generalist'
           });
         }
-        
       })
       .catch(err => console.error(err));
   }
@@ -125,10 +124,55 @@ class App extends React.Component {
     axios
       .get(`/api/filter-by-age-range/${ageRange}`)
       .then((reviews) => {
-        this.setState({
-          reviews: reviews.data,
-          filter: 'age'
-        })
+        if (ageRange === 'under-18') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'age',
+            age: 'under 18'
+          });
+        } else if (ageRange === '18-24') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'age',
+            age: '18-24'
+          });
+        } else if (ageRange === '25-34') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'age',
+            age: '25-34'
+          });
+        } else if (ageRange === '35-44') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'age',
+            age: '35-44'
+          });
+        }  else if (ageRange === '45-54') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'age',
+            age: '45-54'
+          });
+        } else if (ageRange === '55-65') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'age',
+            age: '55-65'
+          });
+        }  else if (ageRange === 'over-65') {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'age',
+            age: 'over 65'
+          });
+        } else {
+          this.setState({
+            reviews: reviews.data,
+            filter: 'age',
+            age: 'i keep my age on the d.l.'
+          });
+        }
       })
       .catch(err => console.error(err));
   }
