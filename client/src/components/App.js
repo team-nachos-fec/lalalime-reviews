@@ -8,7 +8,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      reviews: []
+      reviews: [],
+      filter: ''
     };
 
     this.handleSortClick = this.handleSortClick.bind(this);
@@ -38,8 +39,9 @@ class App extends React.Component {
       .get(`/api/filter-by-rating/${rating}`)
       .then((reviews) => {
         this.setState({
-          reviews: reviews.data
-        })
+          reviews: reviews.data,
+          filter: 'rating'
+        }, () => console.log(reviews.data));
       })
       .catch(err => console.error(err));
   }
@@ -51,7 +53,8 @@ class App extends React.Component {
       .get(`/api/filter-by-athletic-type/${athleticType}`)
       .then((reviews) => {
         this.setState({
-          reviews: reviews.data
+          reviews: reviews.data,
+          filter: 'athletic type'
         })
       })
       .catch(err => console.error(err));
@@ -64,7 +67,8 @@ class App extends React.Component {
       .get(`/api/filter-by-age-range/${ageRange}`)
       .then((reviews) => {
         this.setState({
-          reviews: reviews.data
+          reviews: reviews.data,
+          filter: 'age'
         })
       })
       .catch(err => console.error(err));
@@ -77,7 +81,8 @@ class App extends React.Component {
       .get(`/api/filter-by-body-type/${bodyType}`)
       .then((reviews) => {
         this.setState({
-          reviews: reviews.data
+          reviews: reviews.data,
+          filter: 'body type'
         })
       })
       .catch(err => console.error(err));
@@ -227,6 +232,9 @@ class App extends React.Component {
     let average = sum / this.state.reviews.length;
     let averageString = average.toString().split('.').join('_');
 
+    let reviewNumber = this.state.reviews.length;
+    let filter = this.state.filter;
+
     return (
       <div>
         <div className="review-header">
@@ -264,8 +272,15 @@ class App extends React.Component {
           />
           </div>
           <div id="filter-popin">
-            {/* <div>{`Show me  reviews with `}</div> 
-            <div><span>filter type</span><span>filter item</span></div> */}
+            <div id="show-review-number">{`Show me ${reviewNumber} reviews with`}</div> 
+            <div id="filter-and-number" >
+              <span id="filter-type">{filter}</span>
+              <span>
+                <a href=""onClick={(event) => {this.handleRemoveFiltersClick(event)}}>
+                <span id="filter-criteria">18-24</span><span id="filter-number">{`(${reviewNumber})`}</span>
+                </a>
+              </span>
+            </div>
             <div><a href="" onClick={(event) => {this.handleRemoveFiltersClick(event)}}>&#x2715; remove all filters</a></div>
           </div>
           <div className="separator"></div>
@@ -277,7 +292,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="review-page-links">
-            <a href="#" title="1" id="highlighted">1</a>
+            <a href="#" title="1">1</a>
             <a href="#" title="2">2</a>
             <a href="#" title="3">3</a>
             <a href="#" title="4">4</a>
