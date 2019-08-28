@@ -24,24 +24,12 @@ class App extends React.Component {
     this.sortByFeatured = this.sortByFeatured.bind(this);
     this.sortByDate = this.sortByDate.bind(this);
     this.sortByRatingDescending = this.sortByRatingDescending.bind(this);
-    this.sortByRatingDescending = this.sortByRatingDescending.bind(this);
+    this.sortByRatingAscending = this.sortByRatingAscending.bind(this);
   }
 
   componentDidMount() {
-    // this.getReviews();
     this.sortByDate();
   }
-
-  // getReviews() {
-  //   axios
-  //     .get('/api/')
-  //     .then((reviews) => {
-  //       this.setState({
-  //         reviews: reviews.data
-  //       })
-  //     })
-  //     .catch(err => console.error(err));
-  // }
 
   filterReviewsByRating(rating) {
     axios
@@ -134,13 +122,13 @@ class App extends React.Component {
   handleSortClick(event) {
     event.preventDefault();
     console.log('clicked');
-    $('#sort-dropdown').addClass('show');
-
-    $(':not(#sort-dropdown)').on('click', function() {
-      console.log('elsewhere clicked')
-      $('#sort-dropdown').addClass('hide');
-      // $('#rating-dropdown').addClass('show');
-    });
+    // $('#sort-dropdown').addClass('show');
+    $('#sort-dropdown').toggleClass('show');
+    // $(':not(#sort-dropdown)').on('click', function() {
+    //   console.log('elsewhere clicked')
+    //   $('#sort-dropdown').addClass('hide');
+    //   // $('#rating-dropdown').addClass('show');
+    // });
   }
 
   handleRatingClick(event) {
