@@ -280,7 +280,7 @@ class App extends React.Component {
     $('#sort-dropdown').toggleClass('show');
     window.onclick = function(event) {
       if (!event.target.matches('#sort-dropbtn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
+        const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
           if (openDropdown.classList.contains('show')) {
@@ -296,7 +296,7 @@ class App extends React.Component {
     $('#rating-dropdown').toggleClass('show');
     window.onclick = function(event) {
       if (!event.target.matches('#rating-dropbtn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
+        const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
           if (openDropdown.classList.contains('show')) {
@@ -312,7 +312,7 @@ class App extends React.Component {
     $('#athletic-dropdown').toggleClass('show');
     window.onclick = function(event) {
       if (!event.target.matches('#athletic-dropbtn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
+        const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
           if (openDropdown.classList.contains('show')) {
@@ -328,7 +328,7 @@ class App extends React.Component {
     $('#age-dropdown').toggleClass('show');
     window.onclick = function(event) {
       if (!event.target.matches('#age-dropbtn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
+        const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
           if (openDropdown.classList.contains('show')) {
@@ -344,7 +344,7 @@ class App extends React.Component {
     $('#body-dropdown').toggleClass('show');
     window.onclick = function(event) {
       if (!event.target.matches('#body-dropbtn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
+        const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
           if (openDropdown.classList.contains('show')) {
