@@ -248,7 +248,7 @@ class App extends React.Component {
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
-        })
+        });
       })
       .catch(err => console.error(err));
   }
