@@ -3,9 +3,7 @@ import Enzyme, { shallow, mount } from 'enzyme';
 import App from '../client/src/components/App';
 import Adapter from 'enzyme-adapter-react-16';
 
-Enzyme.configure({ 
-  adapter: new Adapter() 
-});
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('App component', () => {
   test('renders', () => {
