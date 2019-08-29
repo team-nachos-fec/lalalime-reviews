@@ -131,56 +131,56 @@ class FiltersAndSorts extends React.Component {
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleRatingClick(event)}} id="rating-dropbtn" className="dropbtn" title="See more 'rating' filters">rating<i className="fa fa-caret-down"></i></button>
             <div id="rating-dropdown" className="dropdown-content">
-              <a href="#" onClick={()=> {this.props.filterReviewsByRating(1)}}>1 star &#40;{oneStarCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByRating(2)}}>2 stars &#40;{twoStarCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByRating(3)}}>3 stars &#40;{threeStarCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByRating(4)}}>4 stars &#40;{fourStarCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByRating(5)}}>5 stars &#40;{fiveStarCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByRating(1)}}>1 star &#40;{oneStarCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByRating(2)}}>2 stars &#40;{twoStarCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByRating(3)}}>3 stars &#40;{threeStarCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByRating(4)}}>4 stars &#40;{fourStarCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByRating(5)}}>5 stars &#40;{fiveStarCount}&#41;</a>
             </div>
           </div>
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleAthleticClick(event)}} id="athletic-dropbtn"  className="dropbtn" title="See more 'athletic type' filters">athletic type<i className="fa fa-caret-down"></i></button>
             <span id="athletic-dropdown" className="dropdown-content">
-              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('yogi')}}>yogi &#40;{yogiCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('runner')}}>runner &#40;{runnerCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('dancer')}}>dancer &#40;{dancerCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('cyclist')}}>cyclist &#40;{cyclistCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAthleticType('sweaty-generalist')}}>sweaty generalist &#40;{sweatyCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAthleticType('yogi')}}>yogi &#40;{yogiCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAthleticType('runner')}}>runner &#40;{runnerCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAthleticType('dancer')}}>dancer &#40;{dancerCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAthleticType('cyclist')}}>cyclist &#40;{cyclistCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAthleticType('sweaty-generalist')}}>sweaty generalist &#40;{sweatyCount}&#41;</a>
             </span>
           </div>
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleAgeClick(event)}} id="age-dropbtn" className="dropbtn" title="See more 'age' filters">age<i className="fa fa-caret-down"></i></button>
             <span id="age-dropdown" className="dropdown-content">
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('under-18')}}>under 18 &#40;{firstAgeCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('18-24')}}>18-24 &#40;{secondAgeCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('25-34')}}>25-34 &#40;{thirdAgeCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('35-44')}}>35-44 &#40;{fourthAgeCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('45-54')}}>45-54 &#40;{fifthAgeCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('55-65')}}>55-65 &#40;{sixthAgeCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('over-65')}}>over 65 &#40;{seventhAgeCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByAge('i-keep-my-age-on-the-dl')}}>i keep my age on the d.l. &#40;{eighthAgeCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAge('under-18')}}>under 18 &#40;{firstAgeCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAge('18-24')}}>18-24 &#40;{secondAgeCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAge('25-34')}}>25-34 &#40;{thirdAgeCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAge('35-44')}}>35-44 &#40;{fourthAgeCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAge('45-54')}}>45-54 &#40;{fifthAgeCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAge('55-65')}}>55-65 &#40;{sixthAgeCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAge('over-65')}}>over 65 &#40;{seventhAgeCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByAge('i-keep-my-age-on-the-dl')}}>i keep my age on the d.l. &#40;{eighthAgeCount}&#41;</a>
             </span>
           </div>
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleBodyClick(event)}} id="body-dropbtn" className="dropbtn" title="See more 'body type' filters">body type<i className="fa fa-caret-down"></i></button>
             <span id="body-dropdown" className="dropdown-content">
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('athletic')}}>athletic &#40;{athleticCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('curvy')}}>curvy &#40;{curvyCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('lean')}}>lean &#40;{leanCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('muscular')}}>muscular &#40;{muscularCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('petite')}}>petite &#40;{petiteCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('slim')}}>slim &#40;{slimCount}&#41;</a>
-              <a href="#" onClick={()=> {this.props.filterReviewsByBodyType('solid')}}>solid &#40;{solidCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('athletic')}}>athletic &#40;{athleticCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('curvy')}}>curvy &#40;{curvyCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('lean')}}>lean &#40;{leanCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('muscular')}}>muscular &#40;{muscularCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('petite')}}>petite &#40;{petiteCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('slim')}}>slim &#40;{slimCount}&#41;</a>
+              <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('solid')}}>solid &#40;{solidCount}&#41;</a>
             </span>
           </div>
           <div className="sort-dropdown">
             <button onClick={(event)=>{this.props.handleSortClick(event)}} id="sort-dropbtn" className="dropbtn">choose a sort order<i className="fa fa-caret-down"></i></button>
             <span id="sort-dropdown" className="dropdown-content">
               {/* <a href="#">choose a sort order</a> */}
-              <a href="#" onClick={()=> {this.props.sortByFeatured()}} >featured reviews first</a>
-              <a href="#" onClick={()=> {this.props.sortByDate()}}>date-newest first</a>
-              <a href="#" onClick={()=> {this.props.sortByRatingDescending()}}>rating-high to low</a>
-              <a href="#" onClick={()=> {this.props.sortByRatingAscending()}}>rating-low to high</a>
+              <a href="#/" onClick={()=> {this.props.sortByFeatured()}} >featured reviews first</a>
+              <a href="#/" onClick={()=> {this.props.sortByDate()}}>date-newest first</a>
+              <a href="#/" onClick={()=> {this.props.sortByRatingDescending()}}>rating-high to low</a>
+              <a href="#/" onClick={()=> {this.props.sortByRatingAscending()}}>rating-low to high</a>
             </span>
           </div>
         </div>

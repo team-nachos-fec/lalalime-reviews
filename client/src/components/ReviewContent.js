@@ -152,11 +152,11 @@ class ReviewContent extends React.Component {
     if (isUserPopupShown === true) {
       userPopup = 
       <div className="user-popup" onMouseLeave={(event) => {this.handleUsernameLeave(event)}}>
-        <div id="popup-username"><a href="" className="username" title={`See ${this.props.review.username}'s full profile`}>{this.props.review.username}</a></div>
+        <div id="popup-username"><a href="#/" className="username" title={`See ${this.props.review.username}'s full profile`}>{this.props.review.username}</a></div>
         <div id="popup-active-date">Active since: {this.props.review.activeSinceDate}</div>
         <div id="also-reviewed-text">I also reviewed</div>
         <div id="first-rating">
-          <span><a href="" title="Scuba Pullover">Scuba Pullover</a></span>
+          <span><a href="#/" title="Scuba Pullover">Scuba Pullover</a></span>
           <span><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${this.props.review.rating}_0/5/rating.gif`} alt={`${this.props.review.rating} out of 5`} title={`${this.props.review.rating} out of 5`}/></span>
         </div>
         <div id="rating-container">
@@ -173,7 +173,7 @@ class ReviewContent extends React.Component {
           <span className="helpfulness-number">{this.props.review.helpfulnessVotesThumbsDown}</span>
         </div>
         <div id="full-profile-link">
-          <span><a href="" title={`See ${this.props.review.username}'s full profile`}>See full profile</a></span>
+          <span><a href="#/" title={`See ${this.props.review.username}'s full profile`}>See full profile</a></span>
         </div>
       </div>;
     } else {
