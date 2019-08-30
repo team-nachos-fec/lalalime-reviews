@@ -29,7 +29,6 @@ class ReviewContent extends React.Component {
     this.setState({
       isUserPopupShown: !this.state.isUserPopupShown
     })
-    // $('.user-popup').fadeIn(500);
   }
 
   handleUsernameLeave(event) {
@@ -37,7 +36,6 @@ class ReviewContent extends React.Component {
     this.setState({
       isUserPopupShown: false
     })
-    // $('.user-popup').fadeOut(500);
   }
 
   handleReportLinkClick(event) {
@@ -45,7 +43,6 @@ class ReviewContent extends React.Component {
     this.setState({
       isReportPopupShown: !this.state.isReportPopupShown
     })
-    // $('.report-popup').fadeIn(500);
   }
 
   handleReportButtonClick(event) {
