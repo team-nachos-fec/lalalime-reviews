@@ -111,7 +111,7 @@ class ReviewContent extends React.Component {
     } else {
       yesLink = 
       <span className="footer-answer">
-        <a href="" title="Yes" onClick={(event) => {this.handleHelpfulYesClick(event)}} >yes &#40; {this.state.helpfulYes} &#41;</a>
+        <a href="" className="yes-link" title="Yes" onClick={(event) => {this.handleHelpfulYesClick(event)}} >yes &#40; {this.state.helpfulYes} &#41;</a>
       </span>;
     }
 
@@ -123,7 +123,7 @@ class ReviewContent extends React.Component {
     } else {
       noLink = 
       <span className="footer-answer">
-        <a href="" title="No" onClick={(event) => {this.handleHelpfulNoClick(event)}}>no &#40; {this.state.helpfulNo} &#41;</a>
+        <a href="" className="no-link" title="No" onClick={(event) => {this.handleHelpfulNoClick(event)}}>no &#40; {this.state.helpfulNo} &#41;</a>
       </span>;
     }
 
@@ -157,7 +157,7 @@ class ReviewContent extends React.Component {
       thankYouPopup = 
       <div id="thank-you-popup">
         <span id="popup-text">Thank you! You have successfully submitted feedback for this review.</span>
-        <a href="" title="Close" id="popup-close-button" onClick={(event) => {this.handleHelpfulCloseClick(event)}}>&#x2715;</a>
+        <a href="" title="Close" className="popup-close-button" onClick={(event) => {this.handleHelpfulCloseClick(event)}}>&#x2715;</a>
       </div>;
     } else {
       thankYouPopup = '';

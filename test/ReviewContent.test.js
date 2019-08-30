@@ -24,7 +24,7 @@ describe('ReviewContent component', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  test('onMouseEnter changes isUserPopupShown from false to true', () => {
+  test('mouse entering username shows user popup', () => {
     wrapper
       .find('a.username')
       .simulate('mouseEnter', {
@@ -34,7 +34,7 @@ describe('ReviewContent component', () => {
     expect(wrapper.state('isUserPopupShown')).toBe(true);
   });
 
-  test('onMouseLeave changes isUserPopupShown from true to false', () => {
+  test('mouse leaving user popup hides user popup', () => {
     wrapper
       .find('.user-popup')
       .simulate('mouseLeave', {
@@ -44,14 +44,81 @@ describe('ReviewContent component', () => {
     expect(wrapper.state('isUserPopupShown')).toBe(false);
   });
 
+  test('clicking report link shows report popup', () => {
+    wrapper
+      .find('.footer-report a')
+      .simulate('click', {
+          preventDefault: () => {
+        }
+      })
+    expect(wrapper.state('isReportPopupShown')).toBe(true);
+  });
 
+  test('clicking submit button in report popup hides report popup', () => {
+    wrapper
+      .find('.submit-btn')
+      .simulate('click', {
+          preventDefault: () => {
+        }
+      });
+    expect(wrapper.state('isReportPopupShown')).toBe(false);
+  });
 
-  // console.log('REVIEW PROFILE CHILD 3',wrapper.props('review').children[0].props.children[3].props);
-  // console.log('REVIEW PROFILE CHILD 4',wrapper.props('review').children[0].props.children[4].props);
-  // console.log('REVIEW PROFILE CHILD 5',wrapper.props('review').children[0].props.children[5].props);
+  test('clicking cancel button in report popup hides report popup', () => {
+    wrapper
+      .setState({
+        isReportPopupShown: true
+      })
+      .find('.cancel-btn')
+      .simulate('click', {
+          preventDefault: () => {
+        }
+      });
+    expect(wrapper.state('isReportPopupShown')).toBe(false);
+  });
 
+  // test('clicking yes link shows thank you popup', () => {
+  //   console.log(wrapper.state('clickableLinkForYes'));
+  //   console.log(wrapper.state('isThankYouPopupShown'));
+  //   wrapper
+  //     .setState({
+  //       // isThankYouPopupShown: true
+  //     });
+  //     .find('a.yes-link')
+  //     .simulate('click', {
+  //         preventDefault: () => {
+  //       }
+  //     });
+  //   console.log(wrapper.state('isThankYouPopupShown'))
+  //   expect(wrapper.state('isThankYouPopupShown')).toBe(true);
+  // });
 
-  // console.log('REVIEW CONTENT',wrapper.props('review').children[1].props);
-  // console.log(wrapper.props('review').children[1].props.children[0].props);
-  // console.log(wrapper.props('review').children[1].props.children[1].props);
+  // test('clicking "yes" link changes "no" link to unclickable link', () => {
+  //   console.log(wrapper.state('clickableLinkForNo'))
+  //   console.log(wrapper.state('clickableLinkForYes'))
+  //   wrapper
+  //     .setState({
+
+  //     })
+  //     .find('.yes')
+  //     .simulate('click', {
+  //       preventDefault: () => {
+  //       }
+  //     })
+  //   expect(wrapper.state('clickableLinkForNo')).toBe(false);
+  // });
+
+  test('clicking close link in thank you popup hides thank you popup', () => {
+    wrapper
+      .setState({
+        isThankYouPopupShown: true
+      })
+      .find('.popup-close-button')
+      .simulate('click', {
+          preventDefault: () => {
+        }
+      });
+    expect(wrapper.state('isThankYouPopupShown')).toBe(false);
+  });
+
 });

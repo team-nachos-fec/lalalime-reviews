@@ -540,7 +540,7 @@ i {
   float: left;
 }
 
-#popup-close-button {
+.popup-close-button {
   text-decoration: none;
   color:  #666666;
   float: right;
