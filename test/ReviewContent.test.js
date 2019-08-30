@@ -24,9 +24,7 @@ describe('ReviewContent component', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  console.log('REVIEW PROFILE CHILD 1',wrapper.props('review').children[0].props.children[1].props.onMouseEnter);
-
-  test('onMouseEnter changes false to true', () => {
+  test('onMouseEnter changes isUserPopupShown from false to true', () => {
     wrapper
       .find('a.username')
       .simulate('mouseEnter', {
@@ -34,8 +32,17 @@ describe('ReviewContent component', () => {
         }
       });
     expect(wrapper.state('isUserPopupShown')).toBe(true);
-  })
+  });
 
+  test('onMouseLeave changes isUserPopupShown from true to false', () => {
+    wrapper
+      .find('.user-popup')
+      .simulate('mouseLeave', {
+          preventDefault: () => {
+        }
+      });
+    expect(wrapper.state('isUserPopupShown')).toBe(false);
+  });
 
 
 
