@@ -297,7 +297,7 @@ class App extends React.Component {
     event.preventDefault();
     $('#sort-dropdown').toggleClass('show');
     window.onclick = function(event) {
-      if (!event.target.matches('#sort-dropbtn')) {
+      if (!event.target.matches('.dropbtn')) {
         const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
@@ -313,7 +313,7 @@ class App extends React.Component {
     event.preventDefault();
     $('#rating-dropdown').toggleClass('show');
     window.onclick = function(event) {
-      if (!event.target.matches('#rating-dropbtn')) {
+      if (!event.target.matches('.dropbtn')) {
         const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
@@ -329,7 +329,7 @@ class App extends React.Component {
     event.preventDefault();
     $('#athletic-dropdown').toggleClass('show');
     window.onclick = function(event) {
-      if (!event.target.matches('#athletic-dropbtn')) {
+      if (!event.target.matches('.dropbtn')) {
         const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
@@ -345,7 +345,7 @@ class App extends React.Component {
     event.preventDefault();
     $('#age-dropdown').toggleClass('show');
     window.onclick = function(event) {
-      if (!event.target.matches('#age-dropbtn')) {
+      if (!event.target.matches('.dropbtn')) {
         const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
@@ -361,7 +361,7 @@ class App extends React.Component {
     event.preventDefault();
     $('#body-dropdown').toggleClass('show');
     window.onclick = function(event) {
-      if (!event.target.matches('#body-dropbtn')) {
+      if (!event.target.matches('.dropbtn')) {
         const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {
           let openDropdown = dropdowns[i];
@@ -424,8 +424,8 @@ class App extends React.Component {
         <div>
           <div>
             <FiltersAndSorts
-              sortButtonName={this.state.sortButtonName}
               reviews={this.state.reviews}
+              sortButtonName={this.state.sortButtonName}
               handleSortClick={this.handleSortClick} 
               handleRatingClick={this.handleRatingClick} 
               handleAthleticClick={this.handleAthleticClick} 
