@@ -126,7 +126,7 @@ class FiltersAndSorts extends React.Component {
     }
     
     return (
-    <div>
+      <div>
         <div className="filters-and-sorts">
           <div className="filter-dropdown">
             <button onClick={(event)=>{this.props.handleRatingClick(event)}} id="rating-dropbtn" className="dropbtn" title="See more 'rating' filters">rating<i className="fa fa-caret-down"></i></button>
