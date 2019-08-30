@@ -50,7 +50,6 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-
   filterReviewsByRating(rating) {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
@@ -426,11 +425,11 @@ class App extends React.Component {
             <FiltersAndSorts
               reviews={this.state.reviews}
               sortButtonName={this.state.sortButtonName}
-              handleSortClick={this.handleSortClick} 
+              handleSortClick={this.handleSortClick}
               handleRatingClick={this.handleRatingClick} 
-              handleAthleticClick={this.handleAthleticClick} 
-              handleAgeClick={this.handleAgeClick} 
-              handleBodyClick={this.handleBodyClick} 
+              handleAthleticClick={this.handleAthleticClick}
+              handleAgeClick={this.handleAgeClick}
+              handleBodyClick={this.handleBodyClick}
               filterReviewsByRating={this.filterReviewsByRating}
               filterReviewsByAthleticType={this.filterReviewsByAthleticType}
               filterReviewsByAge={this.filterReviewsByAge}

@@ -28,8 +28,7 @@ describe('ReviewContent component', () => {
     wrapper
       .find('a.username')
       .simulate('mouseEnter', {
-          preventDefault: () => {
-        }
+        preventDefault: () => {}
       });
     expect(wrapper.state('isUserPopupShown')).toBe(true);
   });
@@ -38,8 +37,7 @@ describe('ReviewContent component', () => {
     wrapper
       .find('.user-popup')
       .simulate('mouseLeave', {
-          preventDefault: () => {
-        }
+        preventDefault: () => {}
       });
     expect(wrapper.state('isUserPopupShown')).toBe(false);
   });
@@ -48,8 +46,7 @@ describe('ReviewContent component', () => {
     wrapper
       .find('.footer-report a')
       .simulate('click', {
-          preventDefault: () => {
-        }
+        preventDefault: () => {}
       })
     expect(wrapper.state('isReportPopupShown')).toBe(true);
   });
@@ -58,8 +55,7 @@ describe('ReviewContent component', () => {
     wrapper
       .find('.submit-btn')
       .simulate('click', {
-          preventDefault: () => {
-        }
+        preventDefault: () => {}
       });
     expect(wrapper.state('isReportPopupShown')).toBe(false);
   });
@@ -71,8 +67,7 @@ describe('ReviewContent component', () => {
       })
       .find('.cancel-btn')
       .simulate('click', {
-          preventDefault: () => {
-        }
+        preventDefault: () => {}
       });
     expect(wrapper.state('isReportPopupShown')).toBe(false);
   });
@@ -115,8 +110,7 @@ describe('ReviewContent component', () => {
       })
       .find('.popup-close-button')
       .simulate('click', {
-          preventDefault: () => {
-        }
+        preventDefault: () => {}
       });
     expect(wrapper.state('isThankYouPopupShown')).toBe(false);
   });

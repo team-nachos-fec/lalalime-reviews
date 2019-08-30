@@ -6,17 +6,18 @@ import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('App component', () => {
+  const wrapper = shallow(<App />);
+
   test('renders', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper.exists()).toBe(true);
   });
 
-  test('reviews are loaded onto page sorted by date', () => {
-    const wrapper = shallow(<App />);
+  test('reviews are loaded onto page', () => {
+    // const wrapper = shallow(<App />);
     const instance = wrapper.instance();
-    jest.spyOn(instance, 'sortByDate');
+    jest.spyOn(instance, 'getReviews');
     instance.componentDidMount();
-    expect(instance.sortByDate).toHaveBeenCalled();
+    expect(instance.getReviews).toHaveBeenCalled();
   });
 
 });
