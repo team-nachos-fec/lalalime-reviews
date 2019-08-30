@@ -353,15 +353,15 @@ i {
   box-shadow: 0px 5px 10px 5px rgba(188,188,188,0.75);
 }
 
-#popup-username{
+.popup-username{
   margin: 20px 0px 10px 10px;
 }
 
-#user-popup .username{
+.user-popup .username{
   font-size: 16px;
 }
 
-#popup-active-date {
+.popup-active-date {
   font-style: italic;
   font-weight: 100;
   font-size: 14px;
@@ -369,18 +369,18 @@ i {
   color: #999999;
 }
 
-#also-reviewed-text {
+.also-reviewed-text {
   font-weight: 100;
   font-size: 14px;
   margin: 0 0 5px 10px;
   color: #999999;
 }
 
-#first-rating span {
+.first-rating span {
   margin-bottom: 50px;
 }
 
-#first-rating a {
+.first-rating a {
   font-weight: 100;
   font-size: 14px;
   margin: 0 10px;
@@ -388,11 +388,11 @@ i {
   text-decoration: none;
 }
 
-#rating-container {
+.rating-container {
   text-align: center;
 }
 
-#second-rating {
+.second-rating {
   display: inline-block;
   text-align: left;
   padding-bottom: 10px;
@@ -400,40 +400,40 @@ i {
   border-bottom: 1px solid #E1E1E1;
 }
 
-#second-rating #text {
+.second-rating .text {
   font-weight: 100;
   font-size: 14px;
   margin-right: 10px;
   color: #666666;
 }
 
-#helpfulness-votes {
+.helpfulness-votes {
   font-weight: 100;
   font-size: 14px;
   color: #999999;
   margin: 5px 0 0 5px;
 }
 
-#helpfulness-votes #helpfulness-text {
+.helpfulness-votes .helpfulness-text {
   font-size: 16px;
   margin: 0 10px 0 5px;
 }
 
-#helpfulness-votes .helpfulness-number {
+.helpfulness-votes .helpfulness-number {
   margin: 0 10px 0 2px;
 }
 
-#helpfulness-votes img{
+.helpfulness-votes img{
   width: 3.5%;
   height: auto;
 }
 
-#full-profile-link {
+.full-profile-link {
   text-align: right;
   margin: 15px 5px 0 0;
 }
 
-#full-profile-link a {
+.full-profile-link a {
   font-weight: 100;
   font-size: 15px;
   margin: 0 10px;
@@ -518,7 +518,7 @@ i {
 
 /*------------ Thank You Popup Styles ------------*/
 
-#thank-you-popup {
+.thank-you-popup {
   display: inline-block;
   margin-left: 50px;
   padding: 10px;
@@ -531,7 +531,7 @@ i {
   box-shadow: 0px 5px 10px 5px rgba(188,188,188,0.75);
 }
 
-#popup-text {
+.popup-text {
   font-weight: 100;
   color: #666666;
   font-size: 15px;

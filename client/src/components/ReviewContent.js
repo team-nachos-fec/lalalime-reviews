@@ -155,8 +155,8 @@ class ReviewContent extends React.Component {
 
     if (isThankYouPopupShown === true) {
       thankYouPopup = 
-      <div id="thank-you-popup">
-        <span id="popup-text">Thank you! You have successfully submitted feedback for this review.</span>
+      <div className="thank-you-popup">
+        <span className="popup-text">Thank you! You have successfully submitted feedback for this review.</span>
         <a href="" title="Close" className="popup-close-button" onClick={(event) => {this.handleHelpfulCloseClick(event)}}>&#x2715;</a>
       </div>;
     } else {
@@ -169,33 +169,33 @@ class ReviewContent extends React.Component {
     if (isUserPopupShown === true) {
       userPopup = 
       <div className="user-popup" onMouseLeave={(event) => {this.handleUsernameLeave(event)}}>
-        <div id="popup-username">
+        <div className="popup-username">
           <a href="#/" className="username" title={`See ${this.props.review.username}'s full profile`}>{this.props.review.username}</a>
         </div>
-        <div id="popup-active-date">
+        <div className="popup-active-date">
           Active since: {this.props.review.activeSinceDate}
         </div>
-        <div id="also-reviewed-text">
+        <div className="also-reviewed-text">
           I also reviewed
         </div>
-        <div id="first-rating">
+        <div className="first-rating">
           <span><a href="#/" title="Scuba Pullover">Scuba Pullover</a></span>
           <span><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${this.props.review.rating}_0/5/rating.gif`} alt={`${this.props.review.rating} out of 5`} title={`${this.props.review.rating} out of 5`}/></span>
         </div>
-        <div id="rating-container">
-          <div id="second-rating">
-            <span id="text">&#40;Unknown&#41;</span>
+        <div className="rating-container">
+          <div className="second-rating">
+            <span className="text">&#40;Unknown&#41;</span>
             <span><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/3_0/5/rating.gif`} alt={`3 out of 5`} title={`3 out of 5`}/></span>
           </div>
         </div>
-        <div id="helpfulness-votes">
-          <span id="helpfulness-text">Helpfulness Votes</span>
+        <div className="helpfulness-votes">
+          <span className="helpfulness-text">Helpfulness Votes</span>
           <span><img src={'https://i.imgur.com/GsRixgl.png'}/></span>
           <span className="helpfulness-number">{this.props.review.helpfulnessVotesThumbsUp}</span>
           <span><img src={'https://i.imgur.com/fWCf4UL.png'}/></span>
           <span className="helpfulness-number">{this.props.review.helpfulnessVotesThumbsDown}</span>
         </div>
-        <div id="full-profile-link">
+        <div className="full-profile-link">
           <span><a href="#/" title={`See ${this.props.review.username}'s full profile`}>See full profile</a></span>
         </div>
       </div>;
