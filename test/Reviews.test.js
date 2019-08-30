@@ -232,9 +232,14 @@ describe('Reviews component', () => {
     ]
   }
 
+  const wrapper = shallow(<Reviews {...ReviewsProps}/>);
+
   test('renders', () => {
-    const wrapper = shallow(<Reviews {...ReviewsProps}/>);
     expect(wrapper.exists()).toBe(true);
+  });
+
+  test('there should be 10 reviews', () => {
+    expect(wrapper.props('reviews').children).toHaveLength(10);
   });
 
 });
