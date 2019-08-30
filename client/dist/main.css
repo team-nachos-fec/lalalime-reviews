@@ -576,8 +576,6 @@ textarea {
 
 .submit-btn {
   display: inline-block;
-  *display: inline;
-  zoom: 1;
   background: #938454;
   border: 1px solid #938454;
   width: auto;
@@ -603,7 +601,6 @@ textarea {
 
 .cancel-btn {
   display: inline-block;
-  *display: inline;
   margin-left: 10px;
   background: #FFFFFF;
   color: #938454;
@@ -627,6 +624,10 @@ textarea {
 .cancel-btn:hover {
   background: #938454;
   color: #FFFFFF;
+}
+
+.submit-btn, .cancel-btn:focus {
+  outline: none;
 }
 
 /*------------ Review Page Links Styles ------------*/
