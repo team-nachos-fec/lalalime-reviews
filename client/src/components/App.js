@@ -9,6 +9,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      sortButtonName: 'choose a sort order',
       reviews: [],
       filter: '',
       rating: '',
@@ -17,6 +18,7 @@ class App extends React.Component {
       bodyType: ''
     };
 
+    this.getReviews = this.getReviews.bind(this);
     this.handleSortClick = this.handleSortClick.bind(this);
     this.handleRatingClick = this.handleRatingClick.bind(this);
     this.handleAthleticClick = this.handleAthleticClick.bind(this);
@@ -34,8 +36,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.sortByDate();
+    this.getReviews();
   }
+
+  getReviews() {
+    axios
+      .get('/api/sort-by-date')
+      .then((reviews) => {
+        this.setState({
+          reviews: reviews.data
+        })
+      })
+      .catch(err => console.error(err));
+  }
+
 
   filterReviewsByRating(rating) {
     $('#filter-popin').show();
@@ -236,7 +250,8 @@ class App extends React.Component {
       .get('/api/sort-by-featured')
       .then((reviews) => {
         this.setState({
-          reviews: reviews.data
+          reviews: reviews.data,
+          sortButtonName: 'featured reviews first'
         });
       })
       .catch(err => console.error(err));
@@ -247,7 +262,8 @@ class App extends React.Component {
       .get('/api/sort-by-date')
       .then((reviews) => {
         this.setState({
-          reviews: reviews.data
+          reviews: reviews.data,
+          sortButtonName: 'date-newest first'
         });
       })
       .catch(err => console.error(err));
@@ -258,7 +274,8 @@ class App extends React.Component {
       .get('/api/sort-by-rating-descending')
       .then((reviews) => {
         this.setState({
-          reviews: reviews.data
+          reviews: reviews.data,
+          sortButtonName: 'rating-high to low'
         });
       })
       .catch(err => console.error(err));
@@ -269,7 +286,8 @@ class App extends React.Component {
       .get('/api/sort-by-rating-ascending')
       .then((reviews) => {
         this.setState({
-          reviews: reviews.data
+          reviews: reviews.data,
+          sortButtonName: 'rating-low to high'
         });
       })
       .catch(err => console.error(err));
@@ -406,7 +424,7 @@ class App extends React.Component {
         <div>
           <div>
             <FiltersAndSorts
-              handleElsewhereButSortClick={this.handleElsewhereButSortClick}
+              sortButtonName={this.state.sortButtonName}
               reviews={this.state.reviews}
               handleSortClick={this.handleSortClick} 
               handleRatingClick={this.handleRatingClick} 
