@@ -237,6 +237,35 @@ i {
 
 /*------------ Review Section Styles ------------*/
 
+/* popup-enter {
+  opacity: 0;
+}
+
+.popup-enter.popup-enter-active {
+  opacity: 1;
+  transition: opacity 2s ease-in;
+} */
+
+.popup-appear,
+.popup-enter {
+    opacity: 0;
+}
+  
+.popup-appear.popup-appear-active,
+.popup-enter.popup-enter-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+}
+
+.popup-leave {
+  opacity: 1;
+}
+
+.popup-leave.popup-leave-active {
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -485,7 +514,7 @@ i {
 /*------------ Thank You Popup Styles ------------*/
 
 #thank-you-popup {
-  display: block;
+  display: inline-block;
   margin-left: 50px;
   padding: 10px;
   border-radius: 10px;
@@ -643,3 +672,14 @@ textarea {
 .hide {
   display: none;
 }
+
+
+
+/* .example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+} */

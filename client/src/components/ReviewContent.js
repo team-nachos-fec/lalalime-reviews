@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class ReviewContent extends React.Component {
   constructor(props) {
@@ -85,7 +86,10 @@ class ReviewContent extends React.Component {
 
   handleHelpfulCloseClick(event) {
     event.preventDefault();
-    $('#thank-you-popup').fadeOut(500);
+    // $('#thank-you-popup').fadeOut(500);
+    this.setState({
+      isThankYouPopupShown: false
+    })
   }
 
   render() {
@@ -208,7 +212,14 @@ class ReviewContent extends React.Component {
             >report as inappropriate</a></span>
             {reportPopup}
           </div>
-          {thankYouPopup}
+            <ReactCSSTransitionGroup
+              transitionName="popup"
+              transitionAppear={true}
+              transitionAppearTimeout={500}
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={500}>
+              {thankYouPopup}
+            </ReactCSSTransitionGroup>
         </div>
       </div>
     )
