@@ -34,7 +34,10 @@ class ReviewContent extends React.Component {
 
   handleUsernameLeave(event) {
     event.preventDefault();
-    $('.user-popup').fadeOut(500);
+    this.setState({
+      isUserPopupShown: false
+    })
+    // $('.user-popup').fadeOut(500);
   }
 
   handleReportLinkClick(event) {
@@ -47,13 +50,14 @@ class ReviewContent extends React.Component {
 
   handleReportButtonClick(event) {
     event.preventDefault();
-    $('.report-popup').fadeOut(500);
+    this.setState({
+      isReportPopupShown: false
+    })
   }
 
   handleHelpfulYesClick(event) {
     event.preventDefault();
     if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes) {
-      // $('#thank-you-popup').fadeIn(500);
       this.setState({
         helpfulYes: this.props.review.wasThisReviewHelpfulYes + 1,
         clickableLinkForNo: false,
@@ -70,7 +74,6 @@ class ReviewContent extends React.Component {
   handleHelpfulNoClick(event) {
     event.preventDefault();
     if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo) {
-      // $('#thank-you-popup').fadeIn(500);
       this.setState({
         helpfulNo: this.props.review.wasThisReviewHelpfulNo + 1,
         clickableLinkForYes: false,
@@ -86,7 +89,6 @@ class ReviewContent extends React.Component {
 
   handleHelpfulCloseClick(event) {
     event.preventDefault();
-    // $('#thank-you-popup').fadeOut(500);
     this.setState({
       isThankYouPopupShown: false
     })
@@ -189,7 +191,14 @@ class ReviewContent extends React.Component {
         <div className="review-profile">
           <div className="rating"><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${this.props.review.rating}_0/5/rating.gif`} alt={`${this.props.review.rating} out of 5`} title={`${this.props.review.rating} out of 5`}/></div>
           <a href="" className="username" onMouseEnter={(event) => {this.handleUsernameEnter(event)}}>{this.props.review.username}</a>
-          {userPopup}
+          <ReactCSSTransitionGroup
+            transitionName="popup"
+            transitionAppear={true}
+            transitionAppearTimeout={500}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}>
+            {userPopup}
+          </ReactCSSTransitionGroup>
           <div className="user-properties">
             <div className="user-property"><span className="lighter">location: </span><span className="bolder">{this.props.review.location.toUpperCase()}</span></div>
             <div className="user-property"><span className="lighter">athletic type: </span><span className="bolder">{this.props.review.athleticType.toUpperCase()}</span></div>
@@ -210,7 +219,14 @@ class ReviewContent extends React.Component {
             <span className="footer-report"><a href="" title="Report"
             onClick={(event) => {this.handleReportLinkClick(event)}}
             >report as inappropriate</a></span>
-            {reportPopup}
+            <ReactCSSTransitionGroup
+              transitionName="popup"
+              transitionAppear={true}
+              transitionAppearTimeout={500}
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={500}>
+              {reportPopup}
+            </ReactCSSTransitionGroup>
           </div>
             <ReactCSSTransitionGroup
               transitionName="popup"
