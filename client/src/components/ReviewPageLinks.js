@@ -9,6 +9,6 @@ const ReviewPageLinks = () => (
     <a href="#" title="5">5</a>
     <a href="#" title="next">next</a>
   </div>
-)
+);
 
 export default ReviewPageLinks;
