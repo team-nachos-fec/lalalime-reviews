@@ -68,7 +68,7 @@ body {
   margin-bottom: 20px;
 }
 
-#filtered-rating-disclaimer {
+.filtered-rating-disclaimer {
   display: none;
   color: #999999;
   font-size: 14px;
@@ -180,12 +180,12 @@ i {
 
 /*------------ Filter Popin Section Styles ------------*/
 
-#filter-popin {
+.filter-popin {
   display: none;
   margin: -35px 0 0 50px;
 }
 
-#show-review-number {
+.show-review-number {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 13px;
@@ -195,7 +195,7 @@ i {
   margin-bottom: 10px;
 }
 
-#filter-type {
+.filter-type {
   text-transform: uppercase;
   font-weight: 100;
   font-size: 13px;
@@ -205,7 +205,7 @@ i {
   margin-right: 20px;
 }
 
-#filter-criteria {
+.filter-criteria {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 13px;
@@ -215,16 +215,16 @@ i {
   margin-right: 5px; 
 }
 
-#filter-and-number {
+.filter-and-number {
   margin-bottom: 10px;
 }
 
-#filter-number {
+.filter-number {
   font-size: 15px;
   color: #666666;
 }
 
-#filter-popin a {
+.filter-popin a {
   text-decoration: none;
   display: inline-block;
   outline: none;

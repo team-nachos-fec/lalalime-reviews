@@ -52,8 +52,8 @@ class App extends React.Component {
 
 
   filterReviewsByRating(rating) {
-    $('#filter-popin').show();
-    $('#filtered-rating-disclaimer').show();
+    $('.filter-popin').show();
+    $('.filtered-rating-disclaimer').show();
     axios
       .get(`/api/filter-by-rating/${rating}`)
       .then((reviews) => {
@@ -93,8 +93,8 @@ class App extends React.Component {
   }
 
   filterReviewsByAthleticType(athleticType) {
-    $('#filter-popin').show();
-    $('#filtered-rating-disclaimer').show();
+    $('.filter-popin').show();
+    $('.filtered-rating-disclaimer').show();
     axios
       .get(`/api/filter-by-athletic-type/${athleticType}`)
       .then((reviews) => {
@@ -134,8 +134,8 @@ class App extends React.Component {
   }
 
   filterReviewsByAge(ageRange) {
-    $('#filter-popin').show();
-    $('#filtered-rating-disclaimer').show();
+    $('.filter-popin').show();
+    $('.filtered-rating-disclaimer').show();
     axios
       .get(`/api/filter-by-age-range/${ageRange}`)
       .then((reviews) => {
@@ -193,8 +193,8 @@ class App extends React.Component {
   }
 
   filterReviewsByBodyType(bodyType) {
-    $('#filter-popin').show();
-    $('#filtered-rating-disclaimer').show();
+    $('.filter-popin').show();
+    $('.filtered-rating-disclaimer').show();
     axios
       .get(`/api/filter-by-body-type/${bodyType}`)
       .then((reviews) => {
@@ -376,8 +376,8 @@ class App extends React.Component {
   handleRemoveFiltersClick(event) {
     event.preventDefault();
     this.sortByDate();
-    $('#filter-popin').hide();
-    $('#filtered-rating-disclaimer').hide();
+    $('.filter-popin').hide();
+    $('.filtered-rating-disclaimer').hide();
   }
 
   render() {
@@ -411,7 +411,7 @@ class App extends React.Component {
           <div className="review-question">
             How's this gear working for you?
           </div>
-          <div id="filtered-rating-disclaimer">
+          <div className="filtered-rating-disclaimer">
             &#40;based on current filters&#41;
           </div>
           <div className="average-rating">
@@ -441,16 +441,16 @@ class App extends React.Component {
               sortByRatingAscending={this.sortByRatingAscending}
             />
           </div>
-          <div id="filter-popin">
-            <div id="show-review-number">
+          <div className="filter-popin">
+            <div className="show-review-number">
               {`Show me ${reviewNumber} reviews with`}
             </div> 
-            <div id="filter-and-number" >
-              <span id="filter-type">{filter}</span>
+            <div className="filter-and-number" >
+              <span className="filter-type">{filter}</span>
               <span>
                 <a href=""onClick={(event) => {this.handleRemoveFiltersClick(event)}}>
-                  <span id="filter-criteria">{filterCriteria}</span>
-                  <span id="filter-number">{`(${reviewNumber})`}</span>
+                  <span className="filter-criteria">{filterCriteria}</span>
+                  <span className="filter-number">{`(${reviewNumber})`}</span>
                 </a>
               </span>
             </div>
