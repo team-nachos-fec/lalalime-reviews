@@ -63,7 +63,8 @@ class ReviewContent extends React.Component {
     } if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes + 1) {
       this.setState({
         helpfulYes: this.props.review.wasThisReviewHelpfulYes,
-        clickableLinkForNo: true
+        clickableLinkForNo: true,
+        isThankYouPopupShown: false
       });
     }
   }
@@ -79,7 +80,8 @@ class ReviewContent extends React.Component {
     } if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo + 1) {
       this.setState({
         helpfulNo: this.props.review.wasThisReviewHelpfulNo,
-        clickableLinkForYes: true
+        clickableLinkForYes: true,
+        isThankYouPopupShown: false
       });
     }
   }
