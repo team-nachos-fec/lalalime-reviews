@@ -242,15 +242,6 @@ i {
 
 /*------------ Review Section Styles ------------*/
 
-/* popup-enter {
-  opacity: 0;
-}
-
-.popup-enter.popup-enter-active {
-  opacity: 1;
-  transition: opacity 2s ease-in;
-} */
-
 .popup-appear,
 .popup-enter {
     opacity: 0;
@@ -677,14 +668,3 @@ textarea {
 .hide {
   display: none;
 }
-
-
-
-/* .example-leave {
-  opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-} */
