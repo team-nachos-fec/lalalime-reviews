@@ -237,7 +237,7 @@ class App extends React.Component {
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
-        })
+        });
       })
       .catch(err => console.error(err));
   }
@@ -248,7 +248,7 @@ class App extends React.Component {
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
-        })
+        });
       })
       .catch(err => console.error(err));
   }
@@ -259,7 +259,7 @@ class App extends React.Component {
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
-        })
+        });
       })
       .catch(err => console.error(err));
   }
@@ -270,7 +270,7 @@ class App extends React.Component {
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
-        })
+        });
       })
       .catch(err => console.error(err));
   }
@@ -358,7 +358,7 @@ class App extends React.Component {
   handleRemoveFiltersClick(event) {
     event.preventDefault();
     this.sortByDate();
-    $('#filter-popin').hide()
+    $('#filter-popin').hide();
     $('#filtered-rating-disclaimer').hide();
   }
 
@@ -393,46 +393,55 @@ class App extends React.Component {
           <div className="review-question">
             How's this gear working for you?
           </div>
-          <div id="filtered-rating-disclaimer">&#40;based on current filters&#41;</div>
+          <div id="filtered-rating-disclaimer">
+            &#40;based on current filters&#41;
+          </div>
           <div className="average-rating">
             <img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${averageString}/5/rating.gif`} alt={`${average} out of 5`} title={`${average} out of 5`}/>
           </div>
           <div>
-            <a href="#" title="Create a review" className="create-review">create a review</a>
+            <a href="#/" title="Create a review" className="create-review">create a review</a>
           </div>
         </div>
         <div>
-          <div><FiltersAndSorts
-          handleElsewhereButSortClick={this.handleElsewhereButSortClick}
-          reviews={this.state.reviews}
-          handleSortClick={this.handleSortClick} 
-          handleRatingClick={this.handleRatingClick} 
-          handleAthleticClick={this.handleAthleticClick} 
-          handleAgeClick={this.handleAgeClick} 
-          handleBodyClick={this.handleBodyClick} 
-          filterReviewsByRating={this.filterReviewsByRating}
-          filterReviewsByAthleticType={this.filterReviewsByAthleticType}
-          filterReviewsByAge={this.filterReviewsByAge}
-          filterReviewsByBodyType={this.filterReviewsByBodyType}
-          sortByFeatured={this.sortByFeatured}
-          sortByDate={this.sortByDate}
-          sortByRatingDescending={this.sortByRatingDescending}
-          sortByRatingAscending={this.sortByRatingAscending}
-          />
+          <div>
+            <FiltersAndSorts
+              handleElsewhereButSortClick={this.handleElsewhereButSortClick}
+              reviews={this.state.reviews}
+              handleSortClick={this.handleSortClick} 
+              handleRatingClick={this.handleRatingClick} 
+              handleAthleticClick={this.handleAthleticClick} 
+              handleAgeClick={this.handleAgeClick} 
+              handleBodyClick={this.handleBodyClick} 
+              filterReviewsByRating={this.filterReviewsByRating}
+              filterReviewsByAthleticType={this.filterReviewsByAthleticType}
+              filterReviewsByAge={this.filterReviewsByAge}
+              filterReviewsByBodyType={this.filterReviewsByBodyType}
+              sortByFeatured={this.sortByFeatured}
+              sortByDate={this.sortByDate}
+              sortByRatingDescending={this.sortByRatingDescending}
+              sortByRatingAscending={this.sortByRatingAscending}
+            />
           </div>
           <div id="filter-popin">
-            <div id="show-review-number">{`Show me ${reviewNumber} reviews with`}</div> 
+            <div id="show-review-number">
+              {`Show me ${reviewNumber} reviews with`}
+            </div> 
             <div id="filter-and-number" >
               <span id="filter-type">{filter}</span>
               <span>
                 <a href=""onClick={(event) => {this.handleRemoveFiltersClick(event)}}>
-                <span id="filter-criteria">{filterCriteria}</span><span id="filter-number">{`(${reviewNumber})`}</span>
+                  <span id="filter-criteria">{filterCriteria}</span>
+                  <span id="filter-number">{`(${reviewNumber})`}</span>
                 </a>
               </span>
             </div>
-            <div><a href="" onClick={(event) => {this.handleRemoveFiltersClick(event)}}>&#x2715; remove all filters</a></div>
+            <div>
+              <a href="" onClick={(event) => {this.handleRemoveFiltersClick(event)}}>&#x2715; remove all filters</a>
+            </div>
           </div>
-          <div className="separator"></div>
+          <div className="separator">
+          </div>
           <div>
             <div>
               <div className="reviews">
