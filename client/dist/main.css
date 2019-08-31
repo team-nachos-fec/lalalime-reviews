@@ -626,9 +626,9 @@ textarea {
   color: #FFFFFF;
 }
 
-.submit-btn, .cancel-btn:focus {
+/* .submit-btn, .cancel-btn:focus {
   outline: none;
-}
+} */
 
 /*------------ Review Page Links Styles ------------*/
 
