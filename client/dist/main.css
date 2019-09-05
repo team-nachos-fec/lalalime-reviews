@@ -265,7 +265,7 @@ i {
 .container {
   display: flex;
   flex-direction: row;
-  padding-bottom: 80px;
+  padding-bottom: 45px;
   border-bottom: 1px solid  #E1E1E1;
 }
 
@@ -436,9 +436,10 @@ i {
 
 .review-content {
   margin-left: 170px;
-  padding-top: 50px;
+  padding-top: 45px;
   width: 70%;
   text-align: left;
+  
 }
 
 .review-date {
