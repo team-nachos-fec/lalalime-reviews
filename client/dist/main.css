@@ -40,10 +40,21 @@ body {
   font-family: 'Calibri','Helvetica Neue','Helvetica','Roboto','Arial',sans-serif;
 }
 
+/*------------ Transition Image Styles ------------*/
+
+.transition-image-container {
+  text-align: center;
+}
+
+.transition-image {
+  width: 90%;
+  height: auto;
+}
+
 /*------------ Review Header Styles ------------*/
 
 .review-header {
-  margin-top: 100px;
+  margin-top: 80px;
   text-align: center;
 }
 

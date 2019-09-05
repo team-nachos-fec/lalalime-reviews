@@ -318,6 +318,9 @@ class App extends React.Component {
 
     return (
       <div>
+        <div className="transition-image-container">
+          <img src="https://i.imgur.com/t8kFppE.png" alt="Free shipping, free returns" className="transition-image"/>
+        </div>
         <div className="review-header">
           <div className="reviews-title">
             reviews
