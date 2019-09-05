@@ -200,7 +200,8 @@ const insertMockData = () => {
   let mockReviews = createReviews();
   Review.insertMany(mockReviews)
     .then((docs) => {
-      console.log(docs);
+      // console.log(docs);
+      console.log('database seeded')
     })
     .catch((err) => console.error(err));
 }
