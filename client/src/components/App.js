@@ -289,7 +289,7 @@ class App extends React.Component {
 
   handleRemoveFiltersClick(event) {
     event.preventDefault();
-    this.sortByDate();
+    this.getReviews();
     $('.filter-popin').hide();
     $('.filtered-rating-disclaimer').hide();
   }
