@@ -166,7 +166,7 @@ class ReviewContent extends React.Component {
     const isUserPopupShown = this.state.isUserPopupShown;
     let userPopup;
 
-    if (isUserPopupShown === true) {
+    if (isUserPopupShown) {
       userPopup = 
       <div className="user-popup" onMouseLeave={(event) => {this.handleUsernameLeave(event)}}>
         <div className="popup-username">

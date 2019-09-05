@@ -8,10 +8,95 @@ class FiltersAndSorts extends React.Component {
 
     };
 
+    this.handleRatingClick = this.handleRatingClick.bind(this);
+    this.handleAthleticClick = this.handleAthleticClick.bind(this);
+    this.handleAgeClick = this.handleAgeClick.bind(this);
+    this.handleBodyClick = this.handleBodyClick.bind(this);
+    this.handleSortClick = this.handleSortClick.bind(this);
+  }
+
+  handleRatingClick(event) {
+    event.preventDefault();
+    $('#rating-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('#rating-dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          let openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  }
+
+  handleAthleticClick(event) {
+    event.preventDefault();
+    $('#athletic-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('#athletic-dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          let openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  }
+
+  handleAgeClick(event) {
+    event.preventDefault();
+    $('#age-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('#age-dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          let openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  }
+
+  handleBodyClick(event) {
+    event.preventDefault();
+    $('#body-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('#body-dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          let openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  }
+
+  handleSortClick(event) {
+    event.preventDefault();
+    $('#sort-dropdown').toggleClass('show');
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          let openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
   }
 
   render() {
-    let reviews = this.props.reviews;
+    const reviews = this.props.reviews;
 
     let oneStarCount = 0;
     let twoStarCount = 0;
@@ -129,17 +214,17 @@ class FiltersAndSorts extends React.Component {
       <div>
         <div className="filters-and-sorts">
           <div className="filter-dropdown">
-            <button onClick={(event)=>{this.props.handleRatingClick(event)}} id="rating-dropbtn" className="dropbtn" title="See more 'rating' filters">rating<i className="fa fa-caret-down"></i></button>
-            <div id="rating-dropdown" className="dropdown-content">
+            <button onClick={(event)=>{this.handleRatingClick(event)}} id="rating-dropbtn" className="dropbtn" title="See more 'rating' filters">rating<i className="fa fa-caret-down"></i></button>
+            <span id="rating-dropdown" className="dropdown-content">
               <a href="#/" onClick={()=> {this.props.filterReviewsByRating(1)}}>1 star &#40;{oneStarCount}&#41;</a>
               <a href="#/" onClick={()=> {this.props.filterReviewsByRating(2)}}>2 stars &#40;{twoStarCount}&#41;</a>
               <a href="#/" onClick={()=> {this.props.filterReviewsByRating(3)}}>3 stars &#40;{threeStarCount}&#41;</a>
               <a href="#/" onClick={()=> {this.props.filterReviewsByRating(4)}}>4 stars &#40;{fourStarCount}&#41;</a>
               <a href="#/" onClick={()=> {this.props.filterReviewsByRating(5)}}>5 stars &#40;{fiveStarCount}&#41;</a>
-            </div>
+            </span>
           </div>
           <div className="filter-dropdown">
-            <button onClick={(event)=>{this.props.handleAthleticClick(event)}} id="athletic-dropbtn"  className="dropbtn" title="See more 'athletic type' filters">athletic type<i className="fa fa-caret-down"></i></button>
+            <button onClick={(event)=>{this.handleAthleticClick(event)}} id="athletic-dropbtn"  className="dropbtn" title="See more 'athletic type' filters">athletic type<i className="fa fa-caret-down"></i></button>
             <span id="athletic-dropdown" className="dropdown-content">
               <a href="#/" onClick={()=> {this.props.filterReviewsByAthleticType('yogi')}}>yogi &#40;{yogiCount}&#41;</a>
               <a href="#/" onClick={()=> {this.props.filterReviewsByAthleticType('runner')}}>runner &#40;{runnerCount}&#41;</a>
@@ -149,7 +234,7 @@ class FiltersAndSorts extends React.Component {
             </span>
           </div>
           <div className="filter-dropdown">
-            <button onClick={(event)=>{this.props.handleAgeClick(event)}} id="age-dropbtn" className="dropbtn" title="See more 'age' filters">age<i className="fa fa-caret-down"></i></button>
+            <button onClick={(event)=>{this.handleAgeClick(event)}} id="age-dropbtn" className="dropbtn" title="See more 'age' filters">age<i className="fa fa-caret-down"></i></button>
             <span id="age-dropdown" className="dropdown-content">
               <a href="#/" onClick={()=> {this.props.filterReviewsByAge('under-18')}}>under 18 &#40;{firstAgeCount}&#41;</a>
               <a href="#/" onClick={()=> {this.props.filterReviewsByAge('18-24')}}>18-24 &#40;{secondAgeCount}&#41;</a>
@@ -162,7 +247,7 @@ class FiltersAndSorts extends React.Component {
             </span>
           </div>
           <div className="filter-dropdown">
-            <button onClick={(event)=>{this.props.handleBodyClick(event)}} id="body-dropbtn" className="dropbtn" title="See more 'body type' filters">body type<i className="fa fa-caret-down"></i></button>
+            <button onClick={(event)=>{this.handleBodyClick(event)}} id="body-dropbtn" className="dropbtn" title="See more 'body type' filters">body type<i className="fa fa-caret-down"></i></button>
             <span id="body-dropdown" className="dropdown-content">
               <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('athletic')}}>athletic &#40;{athleticCount}&#41;</a>
               <a href="#/" onClick={()=> {this.props.filterReviewsByBodyType('curvy')}}>curvy &#40;{curvyCount}&#41;</a>
@@ -174,7 +259,7 @@ class FiltersAndSorts extends React.Component {
             </span>
           </div>
           <div className="sort-dropdown">
-            <button onClick={(event)=>{this.props.handleSortClick(event)}} id="sort-dropbtn" className="dropbtn">{this.props.sortButtonName}<i className="fa fa-caret-down"></i></button>
+            <button onClick={(event)=>{this.handleSortClick(event)}} id="sort-dropbtn" className="dropbtn">{this.props.sortButtonName}<i className="fa fa-caret-down"></i></button>
             <span id="sort-dropdown" className="dropdown-content">
               <a href="#/" onClick={()=> {this.props.sortByFeatured()}} >featured reviews first</a>
               <a href="#/" onClick={()=> {this.props.sortByDate()}}>date-newest first</a>

@@ -19,11 +19,6 @@ class App extends React.Component {
     };
 
     this.getReviews = this.getReviews.bind(this);
-    this.handleSortClick = this.handleSortClick.bind(this);
-    this.handleRatingClick = this.handleRatingClick.bind(this);
-    this.handleAthleticClick = this.handleAthleticClick.bind(this);
-    this.handleAgeClick = this.handleAgeClick.bind(this);
-    this.handleBodyClick = this.handleBodyClick.bind(this);
     this.filterReviewsByRating = this.filterReviewsByRating.bind(this);
     this.filterReviewsByAthleticType = this.filterReviewsByAthleticType.bind(this);
     this.filterReviewsByAge = this.filterReviewsByAge.bind(this);
@@ -292,86 +287,6 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  handleSortClick(event) {
-    event.preventDefault();
-    $('#sort-dropdown').toggleClass('show');
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          let openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-  }
-
-  handleRatingClick(event) {
-    event.preventDefault();
-    $('#rating-dropdown').toggleClass('show');
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          let openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-  }
-
-  handleAthleticClick(event) {
-    event.preventDefault();
-    $('#athletic-dropdown').toggleClass('show');
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          let openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-  }
-
-  handleAgeClick(event) {
-    event.preventDefault();
-    $('#age-dropdown').toggleClass('show');
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          let openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-  }
-
-  handleBodyClick(event) {
-    event.preventDefault();
-    $('#body-dropdown').toggleClass('show');
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          let openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-  }
-
   handleRemoveFiltersClick(event) {
     event.preventDefault();
     this.sortByDate();
@@ -425,11 +340,6 @@ class App extends React.Component {
             <FiltersAndSorts
               reviews={this.state.reviews}
               sortButtonName={this.state.sortButtonName}
-              handleSortClick={this.handleSortClick}
-              handleRatingClick={this.handleRatingClick} 
-              handleAthleticClick={this.handleAthleticClick}
-              handleAgeClick={this.handleAgeClick}
-              handleBodyClick={this.handleBodyClick}
               filterReviewsByRating={this.filterReviewsByRating}
               filterReviewsByAthleticType={this.filterReviewsByAthleticType}
               filterReviewsByAge={this.filterReviewsByAge}
