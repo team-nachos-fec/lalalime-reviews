@@ -239,6 +239,4 @@ describe('FiltersAndSorts component', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  console.log(wrapper.props('rating').children.props.children[0].props);
-
 });

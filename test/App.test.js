@@ -13,7 +13,6 @@ describe('App component', () => {
   });
 
   test('reviews are loaded onto page', () => {
-    // const wrapper = shallow(<App />);
     const instance = wrapper.instance();
     jest.spyOn(instance, 'getReviews');
     instance.componentDidMount();
