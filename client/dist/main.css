@@ -274,7 +274,7 @@ i {
   transition: opacity .5s ease-in;
 }
 
-.container {
+.reviews-container {
   display: flex;
   flex-direction: row;
   padding-bottom: 45px;

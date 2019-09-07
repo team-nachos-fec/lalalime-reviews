@@ -204,7 +204,7 @@ class ReviewContent extends React.Component {
     }
 
     return (
-      <div className="container">
+      <div className="reviews-container">
         <div className="review-profile">
           <div className="rating"><img src={`https://lululemon.ugc.bazaarvoice.com/7834redes/${this.props.review.rating}_0/5/rating.gif`} alt={`${this.props.review.rating} out of 5`} title={`${this.props.review.rating} out of 5`}/></div>
           <a href="#/" className="username" onMouseEnter={(event) => {this.handleUsernameEnter(event)}}>{this.props.review.username}</a>
