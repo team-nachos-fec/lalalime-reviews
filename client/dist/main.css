@@ -177,6 +177,7 @@ body {
 }
 
 i {
+  z-index: 2000;
   padding: 0 20px 0 15px;
 }
 
@@ -646,7 +647,7 @@ textarea {
 
 .review-page-links {
   text-align: center;
-  margin: 20px 0 250px 0;
+  margin: 20px 0 285px 0;
 }
 
 .review-page-links a {
@@ -670,6 +671,17 @@ textarea {
   line-height: 1;
   margin: 10px;
   padding: 3px 7px;
+}
+
+/*------------ Transition Image Styles ------------*/
+
+.footer-image-container {
+  text-align: center;
+}
+
+.footer-image {
+  width: 100%;
+  height: auto;
 }
 
 /*------------ Show and Hide Styles ------------*/

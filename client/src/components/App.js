@@ -37,7 +37,7 @@ class App extends React.Component {
 
   getReviews() {
     axios
-      .get('/api/sort-by-date')
+      .get('/reviews/sort-by-date')
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
@@ -50,7 +50,7 @@ class App extends React.Component {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
     axios
-      .get(`/api/filter-by-rating/${rating}`)
+      .get(`/reviews/filter-by-rating/${rating}`)
       .then((reviews) => {
         if (rating === 1) {
           this.setState({
@@ -91,7 +91,7 @@ class App extends React.Component {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
     axios
-      .get(`/api/filter-by-athletic-type/${athleticType}`)
+      .get(`/reviews/filter-by-athletic-type/${athleticType}`)
       .then((reviews) => {
         if (athleticType === 'yogi') {
           this.setState({
@@ -132,7 +132,7 @@ class App extends React.Component {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
     axios
-      .get(`/api/filter-by-age-range/${ageRange}`)
+      .get(`/reviews/filter-by-age-range/${ageRange}`)
       .then((reviews) => {
         if (ageRange === 'under-18') {
           this.setState({
@@ -191,7 +191,7 @@ class App extends React.Component {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
     axios
-      .get(`/api/filter-by-body-type/${bodyType}`)
+      .get(`/reviews/filter-by-body-type/${bodyType}`)
       .then((reviews) => {
         if (bodyType === 'athletic') {
           this.setState({
@@ -242,7 +242,7 @@ class App extends React.Component {
 
   sortByFeatured() {
     axios
-      .get('/api/sort-by-featured')
+      .get('/reviews/sort-by-featured')
       .then((reviews) => {
         this.setState({
           reviews: reviews.data,
@@ -254,7 +254,7 @@ class App extends React.Component {
 
   sortByDate() {
     axios
-      .get('/api/sort-by-date')
+      .get('/reviews/sort-by-date')
       .then((reviews) => {
         this.setState({
           reviews: reviews.data,
@@ -266,7 +266,7 @@ class App extends React.Component {
 
   sortByRatingDescending() {
     axios
-      .get('/api/sort-by-rating-descending')
+      .get('/reviews/sort-by-rating-descending')
       .then((reviews) => {
         this.setState({
           reviews: reviews.data,
@@ -278,7 +278,7 @@ class App extends React.Component {
 
   sortByRatingAscending() {
     axios
-      .get('/api/sort-by-rating-ascending')
+      .get('/reviews/sort-by-rating-ascending')
       .then((reviews) => {
         this.setState({
           reviews: reviews.data,
@@ -381,6 +381,9 @@ class App extends React.Component {
             </div>
           </div>
           <ReviewPageLinks />
+        </div>
+        <div className="footer-image-container">
+          <img src="https://i.imgur.com/DoyLb2O.png" alt="footer image" className="footer-image" />
         </div>
       </div>
     );
