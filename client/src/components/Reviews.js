@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewContent from './ReviewContent'
+import ReviewContent from './ReviewContent';
 
 const Reviews = (props) => (
   <div>

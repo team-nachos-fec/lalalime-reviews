@@ -3,6 +3,7 @@ import FiltersAndSorts from './FiltersAndSorts';
 import Reviews from './Reviews'
 import ReviewPageLinks from './ReviewPageLinks';
 import axios from 'axios';
+import '../../dist/main.css';
 
 class App extends React.Component {
   constructor(props) {
