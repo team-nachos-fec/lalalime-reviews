@@ -19,7 +19,7 @@
 
 To run the server, run ``` npm start ``` in a terminal window
 
-> To seed the database, run ``` npm run seed ``` in another terminal window
+To seed the database, run ``` npm run seed ``` in another terminal window
 
 ## Requirements
 
