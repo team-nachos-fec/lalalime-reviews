@@ -1,6 +1,6 @@
 # Project Name
 
-> Project description
+> This is a replication of the review section of a product page at the LuluLemon website. 
 
 ## Related Projects
 
