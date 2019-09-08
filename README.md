@@ -21,7 +21,7 @@ To run the server, run ``` npm start ``` in a terminal window
 
 To seed the database, run ``` npm run seed ``` in another terminal window
 
-To view the [review section] in a browser, enter (http://localhost.3004/) in the address bar
+To view the review section in a browser, enter http://localhost.3004/ in the address bar
 
 ## Requirements
 
