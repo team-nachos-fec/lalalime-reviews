@@ -17,14 +17,14 @@
 
 ## Usage
 
-> From the Root Directory, 
+> To run the server, run ``` npm start ``` in the terminal
+> To seed the database, run ``` npm run seed ``` in another terminal window
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
-- etc
 
 ## Development
 
