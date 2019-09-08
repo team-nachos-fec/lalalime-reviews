@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/team-nachos-fec/lalalime-navbar
+  - https://github.com/team-nachos-fec/lalalime-main-product
+  - https://github.com/team-nachos-fec/lalalime-similar-products
+  
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ## Usage
 
-> Some usage instructions
+> From the Root Directory, 
 
 ## Requirements
 
