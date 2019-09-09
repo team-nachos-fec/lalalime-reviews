@@ -300,7 +300,7 @@ class App extends React.Component {
     for (var i = 0; i < this.state.reviews.length; i++) {
       sum += this.state.reviews[i].rating;
     }
-    let average = sum / this.state.reviews.length;
+    let average = Math.round(sum / this.state.reviews.length * 10) / 10;
     let averageString = average.toString().split('.').join('_');
 
     let reviewNumber = this.state.reviews.length;
