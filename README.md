@@ -1,13 +1,13 @@
 # Project Name
 
-> Project description
+> This is a replication of the review section of a product page at the LuluLemon website. 
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/team-nachos-fec/lalalime-navbar
+  - https://github.com/team-nachos-fec/lalalime-main-product
+  - https://github.com/team-nachos-fec/lalalime-similar-products
+  
 
 ## Table of Contents
 
@@ -17,14 +17,17 @@
 
 ## Usage
 
-> Some usage instructions
+To run the server, run ``` npm start ``` in a terminal window
+
+To seed the database, run ``` npm run seed ``` in another terminal window
+
+To view the review section in a browser, enter http://localhost:3004/ in the address bar
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
-- etc
 
 ## Development
 
