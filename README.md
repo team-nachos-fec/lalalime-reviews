@@ -1,6 +1,6 @@
 # Project Name
 
-> This is a replication of the review section of a product page at the LuluLemon website. 
+> Functional front-end remodel of LuluLemon Review Section
 
 ## Related Projects
 
