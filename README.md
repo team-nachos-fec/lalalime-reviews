@@ -39,4 +39,10 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+## Screenshots
 
+![Alt text](https://i.imgur.com/8BAu5rM.png)
+![Alt text](https://i.imgur.com/GhqHsPT.png)
+![Alt text](https://i.imgur.com/tsQ2wF2.png)
+![Alt text](https://i.imgur.com/e7174N7.png)
+![Alt text](https://i.imgur.com/gGBEeDu.png)
