@@ -1,4 +1,4 @@
-# Project Name
+# LalaLime Review Module
 
 > Functional front-end remodel of LuluLemon Review Section
 
