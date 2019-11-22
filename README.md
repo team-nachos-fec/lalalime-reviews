@@ -1,6 +1,6 @@
-# Project Name
+# LalaLime Review Module
 
-> This is a replication of the review section of a product page at the LuluLemon website. 
+> Functional front-end remodel of LuluLemon Review Section
 
 ## Related Projects
 
@@ -39,4 +39,16 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+## Demos
 
+![Alt text](https://i.imgur.com/WgTCMoU.gif)
+![Alt text](https://i.imgur.com/fsQ7LVf.gif)
+![Alt text](https://i.imgur.com/3Wnatsp.gif)
+
+## Screenshots
+
+![Alt text](https://i.imgur.com/8BAu5rM.png)
+![Alt text](https://i.imgur.com/GhqHsPT.png)
+![Alt text](https://i.imgur.com/tsQ2wF2.png)
+![Alt text](https://i.imgur.com/e7174N7.png)
+![Alt text](https://i.imgur.com/gGBEeDu.png)
