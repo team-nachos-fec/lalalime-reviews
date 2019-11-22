@@ -1,5 +1,6 @@
 const Review = require('./index.js');
 
+
 const ratings = [1, 2, 3, 4, 5];
 
 const range = (start, end) => {
@@ -185,19 +186,32 @@ const createTops = () => {
   return topReview;
 };
 
-const createReviews = () => {
-  let reviewsArr = [];
-  // for (let i = 0; i < 250; i++) {
-  //   reviewsArr.push(createTops());
-  // }
-  for (let j = 0; j < 10; j++) {
-    reviewsArr.push(createBottoms());
+const createBottomReviews = () => {
+  let bottomReviewsArr = [];
+  for (let i = 0; i < 120; i++) {
+    bottomReviewsArr.push(createBottoms());
   }
-  return reviewsArr;
+  return bottomReviewsArr;
 }
 
+// const createTopReviews = () => {
+//   let topReviewsArr = [];
+//   for (let i = 0; i < 250; i++) {
+//     topReviewsArr.push(createTops());
+//   }
+//   return topReviewsArr;
+// }
+
+// const combineReviews = () => {
+//   let bottomArray = createBottomReviews();
+//   let topArray = createTopReviews();
+
+//   return [...bottomArray, ...topArray];
+// }
+
+
 const insertMockData = () => {
-  let mockReviews = createReviews();
+  let mockReviews = createBottomReviews();
   Review.insertMany(mockReviews)
     .then((docs) => {
       // console.log(docs);

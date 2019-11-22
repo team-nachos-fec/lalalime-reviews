@@ -35,18 +35,18 @@ class App extends React.Component {
     this.getReviews();
   }
 
-  getReviews() {
+  getReviews = () => {
     axios
       .get('/reviews/sort-by-date')
       .then((reviews) => {
         this.setState({
           reviews: reviews.data
-        })
+        });
       })
       .catch(err => console.error(err));
   }
 
-  filterReviewsByRating(rating) {
+  filterReviewsByRating = (rating) => {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
     axios
@@ -288,7 +288,7 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  handleRemoveFiltersClick(event) {
+  handleRemoveFiltersClick = (event) => {
     event.preventDefault();
     this.getReviews();
     $('.filter-popin').hide();

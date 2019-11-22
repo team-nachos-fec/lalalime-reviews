@@ -1,9 +1,9 @@
 {
-  "name": "lalalime",
+  "name": "name",
   "version": "",
   "description": "",
   "author": "team-nachos",
-  "license": "",
+  "license": "MIT",
   "engines": {
     "node": ">=6.13.0"
   },
@@ -18,26 +18,27 @@
     "body-parser": "^1.19.0",
     "css-loader": "^3.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.6.10",
+    "mongoose": "^5.7.12",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.1",
-    "react": "^16.9.0",
+    "nodemon": "^1.19.4",
+    "react": "^16.12.0",
     "react-addons-css-transition-group": "^15.6.2",
-    "react-dom": "^16.9.0",
+    "react-dom": "^16.12.0",
     "style-loader": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.5",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "jest": "^24.9.0",
-    "react-test-renderer": "^16.9.0",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "react-test-renderer": "^16.12.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }
