@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FiltersAndSorts from './FiltersAndSorts';
 import Reviews from './Reviews'
 import ReviewPageLinks from './ReviewPageLinks';
 import axios from 'axios';
 import '../../dist/main.css';
 
-class App extends React.Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
 
@@ -381,4 +381,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// export default App;
