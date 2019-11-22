@@ -8,11 +8,6 @@ class FiltersAndSorts extends React.Component {
 
     };
 
-    // this.handleRatingClick = this.handleRatingClick.bind(this);
-    // this.handleAthleticClick = this.handleAthleticClick.bind(this);
-    // this.handleAgeClick = this.handleAgeClick.bind(this);
-    // this.handleBodyClick = this.handleBodyClick.bind(this);
-    // this.handleSortClick = this.handleSortClick.bind(this);
   }
 
   handleRatingClick = (event) => {
