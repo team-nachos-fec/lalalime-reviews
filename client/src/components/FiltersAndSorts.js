@@ -8,14 +8,14 @@ class FiltersAndSorts extends React.Component {
 
     };
 
-    this.handleRatingClick = this.handleRatingClick.bind(this);
-    this.handleAthleticClick = this.handleAthleticClick.bind(this);
-    this.handleAgeClick = this.handleAgeClick.bind(this);
-    this.handleBodyClick = this.handleBodyClick.bind(this);
-    this.handleSortClick = this.handleSortClick.bind(this);
+    // this.handleRatingClick = this.handleRatingClick.bind(this);
+    // this.handleAthleticClick = this.handleAthleticClick.bind(this);
+    // this.handleAgeClick = this.handleAgeClick.bind(this);
+    // this.handleBodyClick = this.handleBodyClick.bind(this);
+    // this.handleSortClick = this.handleSortClick.bind(this);
   }
 
-  handleRatingClick(event) {
+  handleRatingClick = (event) => {
     event.preventDefault();
     $('#rating-dropdown').toggleClass('show');
     window.onclick = function(event) {
@@ -31,7 +31,7 @@ class FiltersAndSorts extends React.Component {
     }
   }
 
-  handleAthleticClick(event) {
+  handleAthleticClick = (event) => {
     event.preventDefault();
     $('#athletic-dropdown').toggleClass('show');
     window.onclick = function(event) {
@@ -47,7 +47,7 @@ class FiltersAndSorts extends React.Component {
     }
   }
 
-  handleAgeClick(event) {
+  handleAgeClick = (event) => {
     event.preventDefault();
     $('#age-dropdown').toggleClass('show');
     window.onclick = function(event) {
@@ -63,7 +63,7 @@ class FiltersAndSorts extends React.Component {
     }
   }
 
-  handleBodyClick(event) {
+  handleBodyClick = (event) => {
     event.preventDefault();
     $('#body-dropdown').toggleClass('show');
     window.onclick = function(event) {
@@ -79,7 +79,7 @@ class FiltersAndSorts extends React.Component {
     }
   }
 
-  handleSortClick(event) {
+  handleSortClick = (event) => {
     event.preventDefault();
     $('#sort-dropdown').toggleClass('show');
     window.onclick = function(event) {

@@ -19,16 +19,6 @@ class App extends React.Component {
       bodyType: ''
     };
 
-    this.getReviews = this.getReviews.bind(this);
-    this.filterReviewsByRating = this.filterReviewsByRating.bind(this);
-    this.filterReviewsByAthleticType = this.filterReviewsByAthleticType.bind(this);
-    this.filterReviewsByAge = this.filterReviewsByAge.bind(this);
-    this.filterReviewsByBodyType = this.filterReviewsByBodyType.bind(this);
-    this.sortByFeatured = this.sortByFeatured.bind(this);
-    this.sortByDate = this.sortByDate.bind(this);
-    this.sortByRatingDescending = this.sortByRatingDescending.bind(this);
-    this.sortByRatingAscending = this.sortByRatingAscending.bind(this);
-    this.handleRemoveFiltersClick = this.handleRemoveFiltersClick.bind(this);
   }
 
   componentDidMount() {
@@ -87,7 +77,7 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  filterReviewsByAthleticType(athleticType) {
+  filterReviewsByAthleticType = (athleticType) => {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
     axios
@@ -128,7 +118,7 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  filterReviewsByAge(ageRange) {
+  filterReviewsByAge = (ageRange) => {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
     axios
@@ -187,7 +177,7 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  filterReviewsByBodyType(bodyType) {
+  filterReviewsByBodyType = (bodyType) => {
     $('.filter-popin').show();
     $('.filtered-rating-disclaimer').show();
     axios
@@ -240,7 +230,7 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  sortByFeatured() {
+  sortByFeatured = () => {
     axios
       .get('/reviews/sort-by-featured')
       .then((reviews) => {
@@ -252,7 +242,7 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  sortByDate() {
+  sortByDate = () => {
     axios
       .get('/reviews/sort-by-date')
       .then((reviews) => {
@@ -264,7 +254,7 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  sortByRatingDescending() {
+  sortByRatingDescending = () => {
     axios
       .get('/reviews/sort-by-rating-descending')
       .then((reviews) => {
@@ -276,7 +266,7 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
-  sortByRatingAscending() {
+  sortByRatingAscending = () => {
     axios
       .get('/reviews/sort-by-rating-ascending')
       .then((reviews) => {
