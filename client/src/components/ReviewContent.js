@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-class ReviewContent extends React.Component {
+export default class ReviewContent extends Component {
   constructor(props) {
     super(props);
 
@@ -267,5 +267,3 @@ class ReviewContent extends React.Component {
     )
   }
 }
-
-export default ReviewContent;
