@@ -286,25 +286,26 @@ class App extends React.Component {
   }
 
   render() {
+    let { reviews, sortButtonName, filter, rating, athleticType, age, bodyType } = this.state;
     let sum = 0;
-    for (var i = 0; i < this.state.reviews.length; i++) {
-      sum += this.state.reviews[i].rating;
+    for (var i = 0; i < reviews.length; i++) {
+      sum += reviews[i].rating;
     }
-    let average = Math.round(sum / this.state.reviews.length * 10) / 10;
+    let average = Math.round(sum / reviews.length * 10) / 10;
     let averageString = average.toString().split('.').join('_');
 
-    let reviewNumber = this.state.reviews.length;
-    let filter = this.state.filter;
+    let reviewNumber = reviews.length;
+    
     let filterCriteria;
 
     if (filter === 'rating') {
-      filterCriteria = this.state.rating;
+      filterCriteria = rating;
     } else if (filter === 'athletic type') {
-      filterCriteria = this.state.athleticType;
+      filterCriteria = athleticType;
     } else if (filter === 'age') {
-      filterCriteria = this.state.age;
+      filterCriteria = age;
     } else {
-      filterCriteria = this.state.bodyType;
+      filterCriteria = bodyType;
     }
 
     return (
@@ -332,8 +333,8 @@ class App extends React.Component {
         <div>
           <div>
             <FiltersAndSorts
-              reviews={this.state.reviews}
-              sortButtonName={this.state.sortButtonName}
+              reviews={reviews}
+              sortButtonName={sortButtonName}
               filterReviewsByRating={this.filterReviewsByRating}
               filterReviewsByAthleticType={this.filterReviewsByAthleticType}
               filterReviewsByAge={this.filterReviewsByAge}
@@ -366,7 +367,7 @@ class App extends React.Component {
           <div>
             <div>
               <div className="reviews">
-                <Reviews reviews={this.state.reviews} />
+                <Reviews reviews={reviews} />
               </div>
             </div>
           </div>
