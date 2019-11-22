@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class FiltersAndSorts extends React.Component {
+export default class FiltersAndSorts extends Component {
   constructor(props) {
     super(props);
   }
@@ -264,5 +264,3 @@ class FiltersAndSorts extends React.Component {
     )
   }
 }
-
-export default FiltersAndSorts;
