@@ -15,44 +15,37 @@ class ReviewContent extends React.Component {
       isThankYouPopupShown: false
     };
   
-    this.handleUsernameEnter = this.handleUsernameEnter.bind(this);
-    this.handleUsernameLeave = this.handleUsernameLeave.bind(this);
-    this.handleReportButtonClick = this.handleReportButtonClick.bind(this);
-    this.handleReportLinkClick = this.handleReportLinkClick.bind(this);
-    this.handleHelpfulYesClick = this.handleHelpfulYesClick.bind(this);
-    this.handleHelpfulNoClick = this.handleHelpfulNoClick.bind(this);
-    this.handleHelpfulCloseClick = this.handleHelpfulCloseClick.bind(this);
   }
   
-  handleUsernameEnter(event) {
+  handleUsernameEnter = (event) => {
     event.preventDefault();
     this.setState({
       isUserPopupShown: !this.state.isUserPopupShown
     });
   }
 
-  handleUsernameLeave(event) {
+  handleUsernameLeave = (event) => {
     event.preventDefault();
     this.setState({
       isUserPopupShown: false
     });
   }
 
-  handleReportLinkClick(event) {
+  handleReportLinkClick = (event) => {
     event.preventDefault();
     this.setState({
       isReportPopupShown: !this.state.isReportPopupShown
     });
   }
 
-  handleReportButtonClick(event) {
+  handleReportButtonClick = (event) => {
     event.preventDefault();
     this.setState({
       isReportPopupShown: false
     });
   }
 
-  handleHelpfulYesClick(event) {
+  handleHelpfulYesClick = (event) => {
     event.preventDefault();
     if (this.state.helpfulYes === this.props.review.wasThisReviewHelpfulYes) {
       this.setState({
@@ -69,7 +62,7 @@ class ReviewContent extends React.Component {
     }
   }
 
-  handleHelpfulNoClick(event) {
+  handleHelpfulNoClick = (event) => {
     event.preventDefault();
     if (this.state.helpfulNo === this.props.review.wasThisReviewHelpfulNo) {
       this.setState({
@@ -86,7 +79,7 @@ class ReviewContent extends React.Component {
     }
   }
 
-  handleHelpfulCloseClick(event) {
+  handleHelpfulCloseClick = (event) => {
     event.preventDefault();
     this.setState({
       isThankYouPopupShown: false
