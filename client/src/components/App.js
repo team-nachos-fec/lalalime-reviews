@@ -352,14 +352,14 @@ export default class App extends Component {
             <div className="filter-and-number" >
               <span className="filter-type">{filter}</span>
               <span>
-                <a href=""onClick={(event) => {this.handleRemoveFiltersClick(event)}}>
+                <a href=""onClick={this.handleRemoveFiltersClick}>
                   <span className="filter-criteria">{filterCriteria}</span>
                   <span className="filter-number">{`(${reviewNumber})`}</span>
                 </a>
               </span>
             </div>
             <div>
-              <a href="" onClick={(event) => {this.handleRemoveFiltersClick(event)}}>&#x2715; remove all filters</a>
+              <a href="" onClick={this.handleRemoveFiltersClick}>&#x2715; remove all filters</a>
             </div>
           </div>
           <div className="separator">
